@@ -12,7 +12,7 @@ const config: Config = {
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
-  organizationName: "binarstrike",
+  organizationName: "crazydw4rf",
   projectName: "blogger-gabut",
   i18n: {
     defaultLocale: "id",
@@ -82,7 +82,7 @@ const config: Config = {
         { to: "/blog", label: "Blog", position: "left" },
         { to: "/tutorial", label: "Tutorial", position: "left" },
         {
-          href: "https://github.com/binarstrike/blogger-gabut",
+          href: "https://github.com/crazydw4rf/blogger-gabut",
           className: "header-github-link",
           "aria-label": "GitHub repository",
           position: "right",
@@ -119,7 +119,7 @@ const config: Config = {
           items: [
             {
               label: "GitHub",
-              href: "https://github.com/binarstrike",
+              href: "https://github.com/crazydw4rf",
             },
             {
               label: "Blog",
