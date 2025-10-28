@@ -8,7 +8,7 @@ const config: Config = {
   title: "Blogger Gabut",
   tagline: "Cuman Situs Web kecil yang membagikan tutorial seputar IT",
   url: "https://blogger-gabut.web.id",
-  baseUrl: "/",
+  baseUrl: process.env.GITHUB_ACTIONS == "true" ? "/blogger-gabut" : "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
