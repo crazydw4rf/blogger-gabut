@@ -85,10 +85,10 @@
   );
 }
 
-div[class^="announcementBar_"] {
+.theme-announcement-bar {
   /* TODO: Coba pakai warna primer atau aksen dari tema */
-  --site-announcement-bar-stripe-color1: #e8d7ff;
-  --site-announcement-bar-stripe-color2: #ffe9d1;
+  --site-announcement-bar-stripe-color1: #ccccff;
+  --site-announcement-bar-stripe-color2: #ffe6cc;
   background: repeating-linear-gradient(
     35deg,
     var(--site-announcement-bar-stripe-color1),
