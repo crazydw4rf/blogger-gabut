@@ -7,7 +7,7 @@ import type { ThemeConfig as MermaidThemeConfig } from "@docusaurus/theme-mermai
 const config: Config = {
   title: "Blogger Gabut",
   tagline: "Cuman Situs Web kecil yang membagikan tutorial seputar IT",
-  url: "https://blogger-gabut.web.id",
+  url: "https://blog.crazydw4rf.tech",
   baseUrl: process.env.GITHUB_ACTIONS == "true" ? "/blogger-gabut" : "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
