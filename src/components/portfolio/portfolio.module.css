@@ -33,7 +33,7 @@
   text-transform: uppercase;
   letter-spacing: 0.05em;
   padding: 0.35rem 0.85rem;
-  border-radius: 9999px;
+  border-radius: 4px;
   background: rgba(2, 132, 199, 0.1);
   color: var(--ifm-color-primary);
   margin-bottom: 0.75rem;
@@ -74,7 +74,7 @@
   justify-content: space-between;
   gap: 3.5rem;
   padding: clamp(2rem, 4vw, 4rem);
-  border-radius: 1.75rem;
+  border-radius: 4px;
   background: linear-gradient(135deg, rgba(2, 132, 199, 0.05) 0%, rgba(255, 255, 255, 0.8) 100%);
   border: 1px solid rgba(0, 0, 0, 0.08);
   box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04);
@@ -107,7 +107,7 @@
   align-items: center;
   gap: 0.6rem;
   padding: 0.4rem 0.95rem;
-  border-radius: 9999px;
+  border-radius: 4px;
   font-size: 0.825rem;
   font-weight: 600;
   background: rgba(16, 185, 129, 0.12);
@@ -202,7 +202,7 @@
   font-weight: 600;
   font-size: 0.95rem;
   padding: 0.8rem 1.6rem;
-  border-radius: 0.75rem;
+  border-radius: 4px;
   text-decoration: none !important;
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   box-shadow: 0 4px 14px rgba(2, 132, 199, 0.3);
@@ -223,7 +223,7 @@
   font-weight: 600;
   font-size: 0.95rem;
   padding: 0.8rem 1.6rem;
-  border-radius: 0.75rem;
+  border-radius: 4px;
   text-decoration: none !important;
   border: 1px solid rgba(0, 0, 0, 0.1);
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
@@ -256,7 +256,7 @@
   justify-content: center;
   width: 44px;
   height: 44px;
-  border-radius: 0.75rem;
+  border-radius: 4px;
   background: rgba(0, 0, 0, 0.03);
   border: 1px solid rgba(0, 0, 0, 0.08);
   color: var(--ifm-color-emphasis-800);
@@ -307,7 +307,7 @@
   position: relative;
   width: clamp(260px, 26vw, 360px);
   height: clamp(260px, 26vw, 360px);
-  border-radius: 2rem;
+  border-radius: 4px;
   object-fit: cover;
   border: 3px solid rgba(14, 165, 233, 0.35);
   box-shadow: 0 20px 45px -12px rgba(2, 132, 199, 0.22);
@@ -344,7 +344,7 @@
 
 .statCard {
   padding: 1.75rem;
-  border-radius: 1.25rem;
+  border-radius: 4px;
   background: var(--ifm-card-background-color);
   border: 1px solid rgba(0, 0, 0, 0.06);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
@@ -396,7 +396,7 @@
 
 .skillCard {
   padding: 2rem;
-  border-radius: 1.25rem;
+  border-radius: 4px;
   background: var(--ifm-card-background-color);
   border: 1px solid rgba(0, 0, 0, 0.07);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
@@ -425,7 +425,7 @@
 .skillIconBox {
   width: 46px;
   height: 46px;
-  border-radius: 0.85rem;
+  border-radius: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -467,7 +467,7 @@
   font-size: 0.85rem;
   font-weight: 500;
   padding: 0.4rem 0.8rem;
-  border-radius: 0.5rem;
+  border-radius: 4px;
   background: rgba(0, 0, 0, 0.04);
   color: var(--ifm-color-emphasis-800);
   border: 1px solid rgba(0, 0, 0, 0.06);
@@ -484,7 +484,7 @@
   text-transform: uppercase;
   letter-spacing: 0.03em;
   padding: 0.12rem 0.4rem;
-  border-radius: 0.3rem;
+  border-radius: 4px;
   background: rgba(2, 132, 199, 0.12);
   color: var(--ifm-color-primary-darkest);
   font-weight: 700;
@@ -544,7 +544,7 @@
 .experienceCard {
   flex: 1;
   padding: 2.25rem;
-  border-radius: 1.25rem;
+  border-radius: 4px;
   background: var(--ifm-card-background-color);
   border: 1px solid rgba(0, 0, 0, 0.07);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
@@ -601,7 +601,7 @@
   color: var(--ifm-color-emphasis-600);
   background: rgba(0, 0, 0, 0.04);
   padding: 0.3rem 0.75rem;
-  border-radius: 0.5rem;
+  border-radius: 4px;
   align-self: flex-start;
 }
 
@@ -640,7 +640,7 @@
   font-size: 0.8rem;
   font-weight: 500;
   padding: 0.3rem 0.7rem;
-  border-radius: 0.45rem;
+  border-radius: 4px;
   background: rgba(2, 132, 199, 0.08);
   color: var(--ifm-color-primary);
   border: 1px solid rgba(2, 132, 199, 0.18);
@@ -666,7 +666,7 @@
   display: flex;
   flex-direction: column;
   padding: 2.25rem;
-  border-radius: 1.25rem;
+  border-radius: 4px;
   background: var(--ifm-card-background-color);
   border: 1px solid rgba(0, 0, 0, 0.08);
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.03);
@@ -709,7 +709,7 @@
   color: #f59e0b;
   background: rgba(245, 158, 11, 0.1);
   padding: 0.2rem 0.55rem;
-  border-radius: 0.4rem;
+  border-radius: 4px;
 }
 
 .projectTitle {
@@ -775,7 +775,7 @@
 
 .achievementCard {
   padding: 1.75rem;
-  border-radius: 1.25rem;
+  border-radius: 4px;
   background: var(--ifm-card-background-color);
   border: 1px solid rgba(0, 0, 0, 0.06);
   display: flex;
@@ -796,7 +796,7 @@
 .achievementIconBox {
   width: 46px;
   height: 46px;
-  border-radius: 0.85rem;
+  border-radius: 4px;
   background: rgba(245, 158, 11, 0.12);
   color: #f59e0b;
   display: flex;
@@ -838,7 +838,7 @@
   padding: 0.5rem 1rem;
   margin: 3.5rem auto 1rem;
   max-width: fit-content;
-  border-radius: 9999px;
+  border-radius: 4px;
   background: var(--ifm-card-background-color);
   border: 1px solid rgba(0, 0, 0, 0.08);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
@@ -857,7 +857,7 @@
   font-weight: 600;
   color: var(--ifm-color-emphasis-800);
   padding: 0.4rem 0.9rem;
-  border-radius: 9999px;
+  border-radius: 4px;
   text-decoration: none !important;
   transition: all 0.2s ease;
 }

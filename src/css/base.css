@@ -7,6 +7,7 @@
   --ifm-color-primary-lighter: #72d2ff;
   --ifm-color-primary-lightest: #a2e1ff;
   --ifm-code-font-size: 95%;
+  --ifm-global-radius: 4px;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 

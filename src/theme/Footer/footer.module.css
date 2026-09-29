@@ -185,7 +185,7 @@
 .circleButton {
   width: 42px;
   height: 42px;
-  border-radius: 50%;
+  border-radius: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -302,7 +302,7 @@
 .catBannerCard {
   width: 100%;
   background: #ffffff;
-  border-radius: 1.25rem;
+  border-radius: 4px;
   border: 1px solid rgba(2, 132, 199, 0.18);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
   overflow: hidden;

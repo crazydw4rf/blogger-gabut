@@ -220,7 +220,7 @@ html {
 }
 
 .navbar__link {
-  border-radius: 8px;
+  border-radius: 4px;
   padding: 0.4rem 0.85rem;
   transition: all 0.2s ease;
 }
