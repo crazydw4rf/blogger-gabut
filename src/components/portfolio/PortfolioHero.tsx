@@ -1,56 +1,18 @@
 import React from "react";
 import Link from "@docusaurus/Link";
 import useBaseUrl from "@docusaurus/useBaseUrl";
-import {
-  Send,
-  MessageSquare,
-  Mail,
-  ExternalLink,
-  BookOpen,
-  ArrowRight,
-  Terminal,
-  MapPin,
-} from "lucide-react";
-import {
-  GithubIcon,
-  LinkedInIcon,
-  DiscordIcon,
-  InstagramIcon,
-  YouTubeIcon,
-} from "./icons/SocialIcons";
+import { BookOpen, ArrowRight, Terminal, MapPin } from "lucide-react";
 import { PortfolioData } from "../../data/portfolioData";
 import styles from "./portfolio.module.css";
 
 interface PortfolioHeroProps {
   personalInfo: PortfolioData["personalInfo"];
-  socialLinks: PortfolioData["socialLinks"];
+  socialLinks?: PortfolioData["socialLinks"];
   stats: PortfolioData["stats"];
 }
 
-const renderSocialIcon = (iconName: string) => {
-  switch (iconName) {
-    case "github":
-      return <GithubIcon size={18} />;
-    case "linkedin":
-      return <LinkedInIcon size={18} />;
-    case "discord":
-      return <DiscordIcon size={18} />;
-    case "instagram":
-      return <InstagramIcon size={18} />;
-    case "youtube":
-      return <YouTubeIcon size={18} />;
-    case "telegram":
-      return <Send size={18} />;
-    case "email":
-      return <Mail size={18} />;
-    default:
-      return <ExternalLink size={18} />;
-  }
-};
-
 export const PortfolioHero: React.FC<PortfolioHeroProps> = ({
   personalInfo,
-  socialLinks,
   stats,
 }) => {
   const avatarSrc = useBaseUrl(personalInfo.avatarUrl);
@@ -76,13 +38,6 @@ export const PortfolioHero: React.FC<PortfolioHeroProps> = ({
     <section className={styles.sectionWrapper} style={{ marginTop: "1rem" }}>
       <div className={styles.heroCard}>
         <div className={styles.heroContent}>
-          {personalInfo.status?.available && (
-            <div className={styles.statusIndicator}>
-              <span className={styles.statusPulse} />
-              <span>{personalInfo.status.text}</span>
-            </div>
-          )}
-
           <h1 className={styles.heroTitle}>
             Hi, I'm{" "}
             <span className={styles.heroGradientText}>
@@ -116,22 +71,6 @@ export const PortfolioHero: React.FC<PortfolioHeroProps> = ({
               <span>Read Tech Blog</span>
               <ArrowRight size={18} />
             </Link>
-          </div>
-
-          <div className={styles.socialBar}>
-            {socialLinks.map((social) => (
-              <a
-                key={social.name}
-                href={social.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.socialIconBtn}
-                title={social.name}
-                aria-label={social.name}
-              >
-                {renderSocialIcon(social.icon)}
-              </a>
-            ))}
           </div>
         </div>
 
