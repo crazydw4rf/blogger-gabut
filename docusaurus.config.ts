@@ -79,8 +79,9 @@ const config: Config = {
         className: "my-logo",
       },
       items: [
-        { to: "/blog", label: "Blog", position: "left" },
+        { to: "/", label: "Portfolio", position: "left", exact: true },
         { to: "/tutorial", label: "Tutorial", position: "left" },
+        { to: "/blog", label: "Blog", position: "left" },
         {
           href: "https://github.com/crazydw4rf/blogger-gabut",
           className: "header-github-link",

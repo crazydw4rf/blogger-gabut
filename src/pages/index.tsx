@@ -1,30 +1,43 @@
 import React from "react";
-import clsx from "clsx";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
-import styles from "./index.module.css";
-
-function HomepageHeader() {
-  const { siteConfig } = useDocusaurusContext();
-  return (
-    <header className={clsx("hero hero--primary", styles.heroBanner)}>
-      <div className="container">
-        <h1 className="hero__title">{siteConfig.title}</h1>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-      </div>
-    </header>
-  );
-}
+import { portfolioData } from "../data/portfolioData";
+import { PortfolioHero } from "../components/portfolio/PortfolioHero";
+import { PortfolioNav } from "../components/portfolio/PortfolioNav";
+import { PortfolioSkills } from "../components/portfolio/PortfolioSkills";
+import { PortfolioExperience } from "../components/portfolio/PortfolioExperience";
+import { PortfolioProjects } from "../components/portfolio/PortfolioProjects";
+import { PortfolioAchievements } from "../components/portfolio/PortfolioAchievements";
+import { PortfolioContact } from "../components/portfolio/PortfolioContact";
+import styles from "../components/portfolio/portfolio.module.css";
 
 export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
+
   return (
     <Layout
-      title={`Homepage ${siteConfig.title}`}
-      description={siteConfig.tagline}
+      title={`${portfolioData.personalInfo.name} | ${portfolioData.personalInfo.role}`}
+      description={portfolioData.personalInfo.bio}
     >
-      <HomepageHeader />
-      <main>{/* <HomepageFeatures /> */}</main>
+      <main className={styles.portfolioContainer}>
+        <PortfolioHero
+          personalInfo={portfolioData.personalInfo}
+          socialLinks={portfolioData.socialLinks}
+          stats={portfolioData.stats}
+        />
+
+        <PortfolioNav />
+
+        <PortfolioSkills categories={portfolioData.skills} />
+
+        <PortfolioExperience experiences={portfolioData.experiences} />
+
+        <PortfolioProjects projects={portfolioData.projects} />
+
+        <PortfolioAchievements achievements={portfolioData.achievements} />
+
+        <PortfolioContact contact={portfolioData.contact} />
+      </main>
     </Layout>
   );
 }
