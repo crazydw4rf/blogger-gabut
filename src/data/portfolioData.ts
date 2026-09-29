@@ -88,10 +88,9 @@ export interface PortfolioData {
 
 /**
  * =====================================================================
- * PORTFOLIO DATA
+ * PORTFOLIO DATA (EASY TO EDIT & EXPAND)
  * 
- * Easily edit this file to update your portfolio!
- * To add a new project, experience, or skill, simply append a new object
+ * To add a new project, experience, or skill, simply add a new object
  * to the corresponding array below.
  * =====================================================================
  */
@@ -99,16 +98,17 @@ export const portfolioData: PortfolioData = {
   personalInfo: {
     name: "Binar Nugroho",
     nickname: "crazydw4rf",
-    role: "Linux SysAdmin & Infrastructure Enthusiast",
-    tagline: "Building reliable, scalable Linux environments and open-source infrastructure.",
-    bio: "Passionate about Linux system administration, core networking services (DNS, Web, LDAP, Firewall), and self-hosted server architectures. Creator of Blogger Gabut, documenting hands-on Debian 12 deployments for the tech community.",
-    avatarUrl: "https://github.com/crazydw4rf.png",
+    role: "SysAdmin & Linux Enthusiast",
+    tagline: "Managing systems, architecting infrastructure, and self-hosting services.",
+    bio: "Linux SysAdmin and open-source enthusiast focused on server administration, network infrastructure, and self-hosted environments. Passionate about system reliability, automation, and sharing practical documentation for the community.",
+    // You can replace avatar.png inside static/img/avatar.png anytime
+    avatarUrl: "/img/avatar.png",
     location: "Indonesia",
     status: {
       available: true,
-      text: "Open for collaboration & SysAdmin challenges",
+      text: "Open for SysAdmin challenges & collaboration",
     },
-    resumeUrl: "#", // Add your Google Drive, PDF, or LinkedIn URL here
+    resumeUrl: "#",
   },
 
   socialLinks: [
@@ -136,77 +136,77 @@ export const portfolioData: PortfolioData = {
 
   stats: [
     {
-      label: "Years of Linux",
+      label: "Years in Linux",
       value: "4+",
-      description: "Hands-on server management & provisioning",
+      description: "Hands-on server operations & system management",
     },
     {
-      label: "Documentation Guides",
+      label: "Guides Published",
       value: "20+",
-      description: "In-depth tutorials on Debian 12 & networking",
+      description: "System administration & infrastructure setups",
     },
     {
-      label: "Services Mastered",
+      label: "Services Managed",
       value: "15+",
-      description: "DNS, LDAP, Nginx, Apache, Firewalls, CA",
+      description: "Network, storage, web, and directory systems",
     },
     {
-      label: "Open Source Projects",
+      label: "Projects & Repos",
       value: "10+",
-      description: "Repositories, lab topologies & scripts",
+      description: "Open source repositories, lab topologies & scripts",
     },
   ],
 
   skills: [
     {
-      title: "Linux & Operating Systems",
+      title: "Linux & Server Systems",
       iconName: "server",
-      description: "Operating system internals, user space, and server lifecycle management.",
+      description: "Operating system administration, package management, and system lifecycle.",
       skills: [
-        { name: "Debian 12 (Bookworm)", level: "Expert" },
-        { name: "Ubuntu Server", level: "Advanced" },
-        { name: "Bash & Shell Scripting", level: "Advanced" },
-        { name: "Systemd Service Units", level: "Advanced" },
-        { name: "Package & Repository Management", level: "Expert" },
-        { name: "Storage & LVM Partitioning", level: "Intermediate" },
+        { name: "Linux Administration", level: "Expert" },
+        { name: "Server Architecture", level: "Advanced" },
+        { name: "Shell Scripting", level: "Advanced" },
+        { name: "Service Unit Management", level: "Advanced" },
+        { name: "Storage & Volume Management", level: "Advanced" },
+        { name: "System Optimization", level: "Intermediate" },
       ],
     },
     {
-      title: "Networking & Security",
+      title: "Network & Security",
       iconName: "network",
-      description: "Routing, firewall filtering, DNS zones, and encrypted network tunnels.",
+      description: "Network routing, perimeter firewalls, and secure communications.",
       skills: [
-        { name: "BIND9 DNS (Master/Slave)", level: "Expert" },
-        { name: "iptables & NFTables", level: "Advanced" },
-        { name: "WireGuard VPN", level: "Advanced" },
-        { name: "OpenSSL & Certificate Authority", level: "Advanced" },
-        { name: "Fail2Ban & Hardening", level: "Advanced" },
-        { name: "VLAN & Subnet Routing", level: "Intermediate" },
+        { name: "Network Infrastructure", level: "Expert" },
+        { name: "Firewall & Traffic Filtering", level: "Advanced" },
+        { name: "Secure VPN Tunnels", level: "Advanced" },
+        { name: "Certificate & Encryption Setup", level: "Advanced" },
+        { name: "Intrusion Prevention & Hardening", level: "Advanced" },
+        { name: "Subnetting & VLAN Routing", level: "Intermediate" },
       ],
     },
     {
-      title: "Core Services & Virtualization",
+      title: "Services & Virtualization",
       iconName: "shield",
-      description: "Web reverse proxies, directory services, and containerized workloads.",
+      description: "Web proxies, directory services, and containerized workloads.",
       skills: [
-        { name: "NGINX (Reverse Proxy & SSL)", level: "Expert" },
-        { name: "Apache HTTP Server", level: "Advanced" },
-        { name: "OpenLDAP Directory Service", level: "Advanced" },
-        { name: "Active Directory (Realmd/Samba)", level: "Intermediate" },
-        { name: "Docker & Docker Compose", level: "Advanced" },
-        { name: "Proxmox VE / KVM", level: "Intermediate" },
+        { name: "Web Server Infrastructure", level: "Expert" },
+        { name: "Containerization", level: "Advanced" },
+        { name: "Directory & Identity Services", level: "Advanced" },
+        { name: "Virtualization & Hypervisors", level: "Intermediate" },
+        { name: "High Availability & Failover", level: "Intermediate" },
+        { name: "Backup & Recovery Planning", level: "Advanced" },
       ],
     },
     {
-      title: "Development & Tooling",
+      title: "Tooling & DevOps",
       iconName: "code",
-      description: "Modern developer workflow tools, version control, and static site platforms.",
+      description: "Modern developer workflow tools, version control, and automation.",
       skills: [
-        { name: "Git & GitHub Workflows", level: "Advanced" },
-        { name: "Bun & Node.js Runtime", level: "Advanced" },
-        { name: "Docusaurus & MDX", level: "Expert" },
-        { name: "TypeScript & React", level: "Intermediate" },
-        { name: "Python Automation", level: "Intermediate" },
+        { name: "Git & Version Control", level: "Advanced" },
+        { name: "CI/CD & Automation", level: "Advanced" },
+        { name: "Technical Documentation", level: "Expert" },
+        { name: "Modern Web Toolchains", level: "Advanced" },
+        { name: "Infrastructure Scripting", level: "Intermediate" },
       ],
     },
   ],
@@ -221,45 +221,45 @@ export const portfolioData: PortfolioData = {
       period: "2023 - Present",
       type: "Open Source",
       description:
-        "Architected and maintained the entire Blogger Gabut technical publication platform. Designed comprehensive documentation standards for Debian 12 server infrastructure.",
+        "Managing server infrastructure, automated deployment pipelines, and publishing comprehensive system administration documentation.",
       highlights: [
-        "Built modular CI/CD deployment pipeline using Bun and GitHub Pages with zero-downtime static asset generation.",
-        "Authored 20+ production-grade tutorials detailing BIND9, OpenLDAP, Apache/Nginx, and iptables firewall rules.",
-        "Integrated offline fuzzy search and hand-drawn Mermaid topology diagrams for intuitive documentation navigation.",
+        "Architected automated continuous deployment workflows ensuring fast, zero-downtime releases.",
+        "Authored dozens of production-ready guides covering core system services and server hardening.",
+        "Integrated fast offline search and visual architectural topology diagrams.",
       ],
-      tags: ["Debian 12", "Docusaurus", "Bun", "GitHub Actions", "BIND9", "NGINX"],
+      tags: ["SysAdmin", "Linux", "DevOps", "Infrastructure", "Automation"],
     },
     {
       id: "exp-2",
-      role: "IT Network Systems Administrator & Lab Architect",
-      company: "LKS Competition Training Lab",
+      role: "Network Systems Administrator & Lab Architect",
+      company: "Technical Competition Lab",
       location: "Indonesia",
       period: "2022 - 2024",
       type: "Community",
       description:
-        "Constructed and managed complex multi-server simulation environments for vocational IT Network Systems competitions.",
+        "Designed and maintained realistic multi-server lab topologies for vocational IT Network Systems administration.",
       highlights: [
-        "Configured dual-server topologies featuring Primary/Secondary BIND9 DNS, Certificate Authorities, and Active Directory domains.",
-        "Implemented strict perimeter security with custom iptables firewall scripts, NAT forwarding, and DMZ isolation.",
-        "Wrote automated sanity test scripts in Bash to quickly verify network connectivity, service ports, and SSL validity.",
+        "Built resilient multi-server environments featuring primary and secondary failover services.",
+        "Configured strict network perimeter security, traffic routing, and access control policies.",
+        "Automated system health verification checks and testing scripts.",
       ],
-      tags: ["Debian", "OpenLDAP", "Realmd", "iptables", "Bash", "Samba AD"],
+      tags: ["Linux", "Networking", "Security", "Automation", "SysAdmin"],
     },
     {
       id: "exp-3",
-      role: "Self-Hosted Homelab Administrator",
-      company: "Personal Infrastructure",
+      role: "Self-Hosted Infrastructure Administrator",
+      company: "Personal Homelab",
       location: "Home Office",
       period: "2021 - Present",
       type: "Part-Time",
       description:
-        "Operating an always-on private server cluster providing media streaming, automated remote backups, private WireGuard mesh, and internal DNS.",
+        "Operating an always-on private server infrastructure providing secure remote access, data backups, and containerized services.",
       highlights: [
-        "Maintained 99.9% uptime across self-hosted services containerized with Docker Compose.",
-        "Configured automated SSL certificate renewal via Let's Encrypt and Cloudflare DNS challenge.",
-        "Implemented automated offsite backup routines utilizing Restic and encrypted cloud storage.",
+        "Maintained high uptime across self-hosted containerized server environments.",
+        "Configured automated SSL certificate renewal and encrypted remote tunneling.",
+        "Implemented scheduled encrypted backup routines with multi-destination redundancy.",
       ],
-      tags: ["Docker", "WireGuard", "Nginx", "Linux", "Restic", "Cloudflare"],
+      tags: ["Self-Hosting", "Containers", "Security", "Linux", "Backups"],
     },
   ],
 
@@ -268,8 +268,8 @@ export const portfolioData: PortfolioData = {
       id: "proj-1",
       title: "Blogger Gabut Documentation Platform",
       description:
-        "Modern, hyper-fast technical blog and SysAdmin documentation portal powered by Docusaurus v3, Bun, and Rust-based toolchain (Faster). Features interactive variable substitution in tutorials and offline local search.",
-      tags: ["Docusaurus", "TypeScript", "Bun", "MDX", "CSS Modules"],
+        "Fast, modern technical documentation portal and SysAdmin blog. Built for high performance, structured guides, and accessible technical references.",
+      tags: ["SysAdmin", "Documentation", "TypeScript", "Web"],
       stars: 12,
       githubUrl: "https://github.com/crazydw4rf/blogger-gabut",
       liveUrl: "https://blog.crazydw4rf.tech",
@@ -278,10 +278,10 @@ export const portfolioData: PortfolioData = {
     },
     {
       id: "proj-2",
-      title: "Debian 12 Core Services Automation",
+      title: "Linux Server Automation Suite",
       description:
-        "A modular collection of automated shell scripts and configuration templates to spin up DNS (BIND9), Web (Nginx/Apache), LDAP, and CA servers on fresh Debian 12 installations with optimal security defaults.",
-      tags: ["Bash", "Debian 12", "BIND9", "OpenLDAP", "Security"],
+        "Modular shell scripts and configuration templates to provision and harden production Linux servers with optimal security defaults.",
+      tags: ["Linux", "Automation", "Bash", "SysAdmin"],
       stars: 8,
       githubUrl: "https://github.com/crazydw4rf",
       featured: true,
@@ -289,10 +289,10 @@ export const portfolioData: PortfolioData = {
     },
     {
       id: "proj-3",
-      title: "WireGuard Mesh & Remote Gateway",
+      title: "Secure Network Gateway & Mesh",
       description:
-        "High-performance site-to-site and point-to-site VPN configuration architecture designed to interconnect remote homelab nodes and mobile devices with zero-trust isolation and traffic routing.",
-      tags: ["WireGuard", "iptables", "Networking", "Linux"],
+        "High-performance encrypted network mesh architecture designed to interconnect remote homelab nodes and devices with zero-trust isolation.",
+      tags: ["Networking", "Security", "VPN", "Linux"],
       githubUrl: "https://github.com/crazydw4rf",
       featured: true,
       category: "SysAdmin & Linux",
@@ -301,8 +301,8 @@ export const portfolioData: PortfolioData = {
       id: "proj-4",
       title: "Containerized Homelab Stack",
       description:
-        "Production-grade Docker Compose definitions incorporating reverse proxy with automated TLS, monitoring dashboard (Prometheus + Grafana), local DNS sinkhole, and secure file synchronization.",
-      tags: ["Docker", "Docker Compose", "Nginx", "Prometheus", "Grafana"],
+        "Production-grade container architecture with automated reverse proxying, monitoring, performance metrics, and data synchronization.",
+      tags: ["Containers", "DevOps", "SysAdmin", "Monitoring"],
       githubUrl: "https://github.com/crazydw4rf",
       featured: false,
       category: "DevOps & Cloud",
@@ -312,37 +312,37 @@ export const portfolioData: PortfolioData = {
   achievements: [
     {
       id: "ach-1",
-      title: "LKS IT Network Systems Administration",
-      issuer: "Vocational Skills Competition",
+      title: "IT Network Systems Administration",
+      issuer: "Technical Competition",
       date: "2023",
       description:
-        "Demonstrated advanced proficiency in configuring Linux enterprise services, network routing, DNS failover, and directory integration under strict competitive time limits.",
-      badge: "Competition Finalist",
+        "Demonstrated advanced proficiency in enterprise Linux services, security policies, and network routing under strict timeframes.",
+      badge: "Finalist",
     },
     {
       id: "ach-2",
-      title: "Debian GNU/Linux Server Infrastructure Mastery",
-      issuer: "Self-Directed Practical Labs",
+      title: "Linux Server Infrastructure Mastery",
+      issuer: "Hands-on Practical Labs",
       date: "2024",
       description:
-        "Completed end-to-end practical setups for BIND9 master/slave replication, Samba Active Directory domains, OpenSSL root/subordinate CA hierarchies, and iptables firewall rules.",
+        "Completed comprehensive multi-node infrastructure setups covering high availability, network filtering, and directory services.",
       badge: "Lab Architect",
     },
     {
       id: "ach-3",
-      title: "Open Source Technical Author",
-      issuer: "Blogger Gabut Community",
+      title: "Open Source Documentation Contributor",
+      issuer: "Tech Community",
       date: "2025",
       description:
-        "Penned over 20 detailed step-by-step guides helping Indonesian IT students and sysadmins bridge the gap between theory and real-world Linux server setups.",
-      badge: "Community Writer",
+        "Authored step-by-step technical guides helping students and junior administrators master Linux system administration.",
+      badge: "Contributor",
     },
   ],
 
   contact: {
-    heading: "Let's Build Something Reliable Together",
+    heading: "Let's Connect & Collaborate",
     description:
-      "Whether you want to discuss Linux server architecture, collaborate on an open-source project, or just talk tech, feel free to drop a message!",
+      "Interested in Linux systems, infrastructure architecture, or open-source projects? Drop a message anytime!",
     email: "binarnugroho775@gmail.com",
     telegramUsername: "yuki2048",
     discordServerUrl: "https://discord.gg/8JZ4JBYqeJ",

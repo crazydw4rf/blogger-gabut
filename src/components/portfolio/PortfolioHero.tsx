@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "@docusaurus/Link";
+import useBaseUrl from "@docusaurus/useBaseUrl";
 import {
   Send,
   MessageSquare,
@@ -39,6 +40,8 @@ export const PortfolioHero: React.FC<PortfolioHeroProps> = ({
   socialLinks,
   stats,
 }) => {
+  const avatarSrc = useBaseUrl(personalInfo.avatarUrl);
+
   return (
     <section className={styles.sectionWrapper} style={{ marginTop: "1rem" }}>
       <div className={styles.heroCard}>
@@ -97,14 +100,16 @@ export const PortfolioHero: React.FC<PortfolioHeroProps> = ({
         <div className={styles.heroAvatarWrapper}>
           <div className={styles.avatarGlow} />
           <img
-            src={personalInfo.avatarUrl}
+            src={avatarSrc}
             alt={personalInfo.name}
             className={styles.avatarImage}
             loading="eager"
             onError={(e) => {
-              // Fallback if avatar fails
-              (e.currentTarget as HTMLImageElement).src =
-                "https://avatars.githubusercontent.com/u/9919?v=4";
+              // Fallback if avatar.png is not yet provided locally
+              const target = e.currentTarget as HTMLImageElement;
+              if (target.src !== "https://github.com/crazydw4rf.png") {
+                target.src = "https://github.com/crazydw4rf.png";
+              }
             }}
           />
         </div>

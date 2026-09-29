@@ -71,16 +71,18 @@ const config: Config = {
 
   themeConfig: {
     navbar: {
+      hideOnScroll: false,
       title: "Blogger Gabut",
-      // TODO: ganti logo
       logo: {
-        alt: "My Site Logo",
+        alt: "Blogger Gabut Logo",
         src: "img/logo.png",
         className: "my-logo",
+        width: 32,
+        height: 32,
       },
       items: [
         { to: "/", label: "Portfolio", position: "left", exact: true },
-        { to: "/tutorial", label: "Tutorial", position: "left" },
+        { to: "/tutorial", label: "Tutorials", position: "left" },
         { to: "/blog", label: "Blog", position: "left" },
         {
           href: "https://github.com/crazydw4rf/blogger-gabut",
@@ -94,42 +96,62 @@ const config: Config = {
       style: "dark",
       links: [
         {
-          title: "Let's connect",
+          title: "Navigation",
           items: [
             {
-              label: "Email",
-              to: "mailto:binarnugroho775@gmail.com",
+              label: "Portfolio",
+              to: "/",
             },
             {
-              label: "Telegram",
-              to: "https://t.me/yuki2048",
+              label: "Tutorials",
+              to: "/tutorial",
+            },
+            {
+              label: "Tech Blog",
+              to: "/blog",
             },
           ],
         },
         {
-          title: "Community",
+          title: "Documentation",
           items: [
             {
-              label: "Discord Server",
-              href: "https://discord.gg/8JZ4JBYqeJ",
+              label: "Linux Server Guides",
+              to: "/tutorial",
+            },
+            {
+              label: "Network Infrastructure",
+              to: "/tutorial",
+            },
+            {
+              label: "Perimeter Security",
+              to: "/tutorial",
             },
           ],
         },
         {
-          title: "More",
+          title: "Connect",
           items: [
             {
               label: "GitHub",
               href: "https://github.com/crazydw4rf",
             },
             {
-              label: "Blog",
-              to: "/blog",
+              label: "Telegram",
+              href: "https://t.me/yuki2048",
+            },
+            {
+              label: "Discord Server",
+              href: "https://discord.gg/8JZ4JBYqeJ",
+            },
+            {
+              label: "Email",
+              href: "mailto:binarnugroho775@gmail.com",
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Blogger Gabut. Built with <a href="https://docusaurus.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">Docusaurus</a>.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Blogger Gabut. Linux SysAdmin & Infrastructure Notes. Built with <a href="https://docusaurus.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">Docusaurus</a>.`,
     },
     prism: {
       theme: prismThemes.github,
