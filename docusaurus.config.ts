@@ -1,8 +1,120 @@
 import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
 import type { PluginOptions as SearchLocalPluginOptions } from "@easyops-cn/docusaurus-search-local";
-import { themes as prismThemes } from "prism-react-renderer";
+import { type PrismTheme } from "prism-react-renderer";
 import type { ThemeConfig as MermaidThemeConfig } from "@docusaurus/theme-mermaid";
+
+const rosePineDawnPrismTheme: PrismTheme = {
+  plain: {
+    color: "#575279",
+    backgroundColor: "#fffaf3",
+  },
+  styles: [
+    {
+      types: ["comment", "prolog", "doctype", "cdata"],
+      style: { color: "#9893a5", fontStyle: "italic" },
+    },
+    {
+      types: ["string", "attr-value"],
+      style: { color: "#ea9d34" },
+    },
+    {
+      types: ["punctuation", "operator"],
+      style: { color: "#797593" },
+    },
+    {
+      types: [
+        "entity",
+        "url",
+        "symbol",
+        "number",
+        "boolean",
+        "variable",
+        "constant",
+        "property",
+        "regex",
+        "inserted",
+      ],
+      style: { color: "#286983" },
+    },
+    {
+      types: ["atrule", "keyword", "attr-name", "selector"],
+      style: { color: "#286983" },
+    },
+    {
+      types: ["function", "deleted", "tag"],
+      style: { color: "#b4637a" },
+    },
+    {
+      types: ["function-variable"],
+      style: { color: "#907aa9" },
+    },
+    {
+      types: ["tag", "selector", "keyword"],
+      style: { color: "#d7827e" },
+    },
+    {
+      types: ["class-name", "maybe-class-name"],
+      style: { color: "#56949f" },
+    },
+  ],
+};
+
+const rosePineDarkPrismTheme: PrismTheme = {
+  plain: {
+    color: "#e0def4",
+    backgroundColor: "#1f1d2e",
+  },
+  styles: [
+    {
+      types: ["comment", "prolog", "doctype", "cdata"],
+      style: { color: "#6e6a86", fontStyle: "italic" },
+    },
+    {
+      types: ["string", "attr-value"],
+      style: { color: "#f6c177" },
+    },
+    {
+      types: ["punctuation", "operator"],
+      style: { color: "#908caa" },
+    },
+    {
+      types: [
+        "entity",
+        "url",
+        "symbol",
+        "number",
+        "boolean",
+        "variable",
+        "constant",
+        "property",
+        "regex",
+        "inserted",
+      ],
+      style: { color: "#31748f" },
+    },
+    {
+      types: ["atrule", "keyword", "attr-name", "selector"],
+      style: { color: "#31748f" },
+    },
+    {
+      types: ["function", "deleted", "tag"],
+      style: { color: "#eb6f92" },
+    },
+    {
+      types: ["function-variable"],
+      style: { color: "#c4a7e7" },
+    },
+    {
+      types: ["tag", "selector", "keyword"],
+      style: { color: "#ebbcba" },
+    },
+    {
+      types: ["class-name", "maybe-class-name"],
+      style: { color: "#9ccfd8" },
+    },
+  ],
+};
 
 const config: Config = {
   title: "Blogger Gabut",
@@ -120,12 +232,16 @@ const config: Config = {
         },
       ],
     },
+    colorMode: {
+      defaultMode: "light",
+      respectPrefersColorScheme: false,
+    },
     footer: {
       style: "dark",
     },
     prism: {
-      theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
+      theme: rosePineDawnPrismTheme,
+      darkTheme: rosePineDarkPrismTheme,
       additionalLanguages: ["bash", "yaml", "nginx", "apacheconf", "dns-zone-file"],
       magicComments: [
         {
@@ -157,7 +273,7 @@ const config: Config = {
       },
       theme: {
         dark: "dark",
-        light: "forest",
+        light: "neutral",
       },
     } satisfies MermaidThemeConfig["mermaid"],
   } satisfies Preset.ThemeConfig,

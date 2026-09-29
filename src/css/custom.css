@@ -2,11 +2,11 @@
 
 [data-theme="dark"] .hero__title,
 [data-theme="dark"] .hero__subtitle {
-  color: #f9f9f9;
+  color: #e0def4;
 }
 
 .header-github-link:hover {
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
 .header-github-link::before {
@@ -22,7 +22,7 @@
 }
 
 [data-theme="dark"] .footer--dark {
-  --ifm-footer-background-color: #0b0f17;
+  --ifm-footer-background-color: #191724;
 }
 
 .unique-tabs .tabs__item {
@@ -32,60 +32,51 @@
 
 .unique-tabs .tabs__item--active {
   border: 0;
-  color: #fff;
+  color: #fffaf3;
   border-radius: var(--ifm-global-radius);
   background-color: var(--ifm-tabs-color-active);
 }
 
-[data-theme="light"] .themedDocusaurus [fill="#FFFF50"] {
-  fill: greenyellow;
-}
-
-[data-theme="dark"] .themedDocusaurus [fill="#FFFF50"] {
-  fill: seagreen;
-}
-
 [data-theme="light"] .DocSearch {
-  /* --docsearch-primary-color: var(--ifm-color-primary); */
-  /* --docsearch-text-color: var(--ifm-font-color-base); */
-  --docsearch-muted-color: var(--ifm-color-emphasis-700);
-  --docsearch-container-background: rgb(94 100 112 / 70%);
+  --docsearch-primary-color: #286983;
+  --docsearch-text-color: #575279;
+  --docsearch-muted-color: #9893a5;
+  --docsearch-container-background: rgba(87, 82, 121, 0.4);
   /* Modal */
-  --docsearch-modal-background: var(--ifm-color-secondary-lighter);
+  --docsearch-modal-background: #faf4ed;
   /* Search box */
-  --docsearch-searchbox-background: var(--ifm-color-secondary);
-  --docsearch-searchbox-focus-background: var(--ifm-color-white);
+  --docsearch-searchbox-background: #fffaf3;
+  --docsearch-searchbox-focus-background: #fffaf3;
   /* Hit */
-  --docsearch-hit-color: var(--ifm-font-color-base);
-  --docsearch-hit-active-color: var(--ifm-color-white);
-  --docsearch-hit-background: var(--ifm-color-white);
+  --docsearch-hit-color: #575279;
+  --docsearch-hit-active-color: #fffaf3;
+  --docsearch-hit-background: #fffaf3;
   /* Footer */
-  --docsearch-footer-background: var(--ifm-color-white);
+  --docsearch-footer-background: #f2e9e1;
 }
 
 [data-theme="dark"] .DocSearch {
-  --docsearch-text-color: var(--ifm-font-color-base);
-  --docsearch-muted-color: var(--ifm-color-secondary-darkest);
-  --docsearch-container-background: rgb(47 55 69 / 70%);
+  --docsearch-primary-color: #ebbcba;
+  --docsearch-text-color: #e0def4;
+  --docsearch-muted-color: #6e6a86;
+  --docsearch-container-background: rgba(25, 23, 36, 0.7);
   /* Modal */
-  --docsearch-modal-background: var(--ifm-background-color);
+  --docsearch-modal-background: #191724;
   /* Search box */
-  --docsearch-searchbox-background: var(--ifm-background-color);
-  --docsearch-searchbox-focus-background: var(--ifm-color-black);
+  --docsearch-searchbox-background: #1f1d2e;
+  --docsearch-searchbox-focus-background: #1f1d2e;
   /* Hit */
-  --docsearch-hit-color: var(--ifm-font-color-base);
-  --docsearch-hit-active-color: var(--ifm-color-white);
-  --docsearch-hit-background: var(--ifm-color-emphasis-100);
+  --docsearch-hit-color: #e0def4;
+  --docsearch-hit-active-color: #191724;
+  --docsearch-hit-background: #1f1d2e;
   /* Footer */
-  --docsearch-footer-background: var(--ifm-background-surface-color);
+  --docsearch-footer-background: #26233a;
   --docsearch-key-gradient: linear-gradient(
     -26.5deg,
-    var(--ifm-color-emphasis-200) 0%,
-    var(--ifm-color-emphasis-100) 100%
+    #26233a 0%,
+    #1f1d2e 100%
   );
 }
-
-
 
 .screen-reader-only {
   border: 0;
@@ -132,20 +123,52 @@
   padding: 0.2rem 0.5rem;
 }
 
+/* Code block highlight styles in Rosé Pine Dawn & Main */
 .code-block-error-line {
-  background-color: #ff000020;
+  background-color: rgba(180, 99, 122, 0.15);
   display: block;
   margin: 0 calc(-1 * var(--ifm-pre-padding));
   padding: 0 var(--ifm-pre-padding);
-  border-left: 3px solid #ff000080;
+  border-left: 3px solid #b4637a;
+}
+
+[data-theme="dark"] .code-block-error-line {
+  background-color: rgba(235, 111, 146, 0.18);
+  border-left: 3px solid #eb6f92;
+}
+
+.code-block-highlighted-line {
+  background-color: rgba(40, 105, 131, 0.12);
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
+  border-left: 3px solid #286983;
+}
+
+[data-theme="dark"] .code-block-highlighted-line {
+  background-color: rgba(235, 188, 186, 0.15);
+  border-left: 3px solid #ebbcba;
+}
+
+.diff-code-new-highlight {
+  background-color: rgba(86, 148, 159, 0.15);
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
+  border-left: 3px solid #56949f;
+}
+
+[data-theme="dark"] .diff-code-new-highlight {
+  background-color: rgba(156, 207, 216, 0.15);
+  border-left: 3px solid #9ccfd8;
 }
 
 [data-rmiz-modal-overlay="visible"] {
-  background-color: rgba(255 255 255 / 95%);
+  background-color: rgba(250, 244, 237, 0.95);
 }
 
 [data-theme="dark"] [data-rmiz-modal-overlay="visible"] {
-  background-color: rgba(0 0 0 / 95%);
+  background-color: rgba(25, 23, 36, 0.95);
 }
 
 html[data-navbar="false"] .navbar {
@@ -153,28 +176,7 @@ html[data-navbar="false"] .navbar {
 }
 
 html[data-red-border] div#__docusaurus {
-  border: red solid thick;
-}
-
-.code-block-highlighted-line {
-  background-color: #008dda20;
-  display: block;
-  margin: 0 calc(-1 * var(--ifm-pre-padding));
-  padding: 0 var(--ifm-pre-padding);
-  border-left: 3px solid #008dda80;
-}
-
-.diff-code-new-highlight {
-  background-color: #dafbe1;
-  display: block;
-  margin: 0 calc(-1 * var(--ifm-pre-padding));
-  padding: 0 var(--ifm-pre-padding);
-  border-left: 3px solid #aceebb;
-}
-
-[data-theme="dark"] .diff-code-new-highlight {
-  background-color: #4f8058;
-  border-left: 3px solid #3c5e42;
+  border: #b4637a solid thick;
 }
 
 /* Smooth Scrolling for anchor links & mobile overflow prevention */
@@ -188,21 +190,21 @@ body {
   overflow-x: clip;
 }
 
-/* Modern Glassmorphic Navbar - Full Width */
+/* Modern Glassmorphic Navbar - Rosé Pine Palette */
 .navbar {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  background-color: rgba(255, 255, 255, 0.85) !important;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.03);
+  background-color: rgba(255, 250, 243, 0.9) !important;
+  border-bottom: 1px solid rgba(121, 117, 147, 0.15);
+  box-shadow: 0 4px 20px -2px rgba(87, 82, 121, 0.04);
   transition: background-color 0.25s ease, border-color 0.25s ease;
   padding: 0.5rem 0;
 }
 
 [data-theme="dark"] .navbar {
-  background-color: rgba(15, 23, 42, 0.88) !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 4px 25px -2px rgba(0, 0, 0, 0.5);
+  background-color: rgba(31, 29, 46, 0.9) !important;
+  border-bottom: 1px solid rgba(144, 140, 170, 0.15);
+  box-shadow: 0 4px 25px -2px rgba(0, 0, 0, 0.6);
 }
 
 .navbar__inner {
@@ -216,6 +218,7 @@ body {
   font-weight: 800;
   letter-spacing: -0.02em;
   font-size: 1.15rem;
+  color: var(--rp-text);
 }
 
 .navbar__item {
@@ -228,82 +231,83 @@ body {
   border-radius: 4px;
   padding: 0.4rem 0.85rem;
   transition: all 0.2s ease;
+  color: var(--rp-text);
 }
 
 .navbar__link:hover {
-  color: var(--ifm-color-primary) !important;
-  background-color: rgba(2, 132, 199, 0.08);
+  color: #286983 !important;
+  background-color: rgba(40, 105, 131, 0.08);
 }
 
 [data-theme="dark"] .navbar__link:hover {
-  background-color: rgba(56, 189, 248, 0.12);
-  color: #38bdf8 !important;
+  background-color: rgba(235, 188, 186, 0.12);
+  color: #ebbcba !important;
 }
 
-/* Reconstructed Modern Footer - Full Width */
+/* Reconstructed Modern Footer - Rosé Pine Palette */
 .footer {
   padding: 4.5rem clamp(1.25rem, 3.5vw, 3.5rem) 2.5rem;
 }
 
-/* Light Mode Footer: Crisp dark slate on soft light gray */
+/* Light Mode Footer (Rosé Pine Dawn) */
 [data-theme="light"] .footer,
 html[data-theme="light"] footer.footer {
-  background-color: #f1f5f9 !important;
-  border-top: 1px solid #e2e8f0 !important;
-  color: #334155 !important;
+  background-color: #f2e9e1 !important;
+  border-top: 1px solid #dfdad9 !important;
+  color: #575279 !important;
 }
 
 [data-theme="light"] .footer .footer__title {
-  color: #0f172a !important;
+  color: #575279 !important;
   font-weight: 700;
 }
 
 [data-theme="light"] .footer .footer__link-item {
-  color: #334155 !important;
+  color: #797593 !important;
   font-weight: 500;
 }
 
 [data-theme="light"] .footer .footer__link-item:hover {
-  color: #0284c7 !important;
+  color: #286983 !important;
 }
 
 [data-theme="light"] .footer .footer__copyright,
 [data-theme="light"] .footer .footer__copyright a {
-  color: #475569 !important;
+  color: #797593 !important;
 }
 
 [data-theme="light"] .footer .footer__copyright a:hover {
-  color: #0284c7 !important;
+  color: #286983 !important;
 }
 
-/* Dark Mode Footer: Sleek silver on deep slate black */
+/* Dark Mode Footer (Rosé Pine Main) */
 [data-theme="dark"] .footer,
 html[data-theme="dark"] footer.footer {
-  background-color: #0b0f17 !important;
-  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
-  color: #94a3b8 !important;
+  background-color: #191724 !important;
+  border-top: 1px solid #26233a !important;
+  color: #908caa !important;
 }
 
 [data-theme="dark"] .footer .footer__title {
-  color: #f8fafc !important;
+  color: #e0def4 !important;
   font-weight: 700;
 }
 
 [data-theme="dark"] .footer .footer__link-item {
-  color: #94a3b8 !important;
+  color: #908caa !important;
 }
 
 [data-theme="dark"] .footer .footer__link-item:hover {
-  color: #38bdf8 !important;
+  color: #ebbcba !important;
 }
 
 [data-theme="dark"] .footer .footer__copyright,
 [data-theme="dark"] .footer .footer__copyright a {
-  color: #64748b !important;
+  color: #6e6a86 !important;
 }
 
 [data-theme="dark"] .footer .footer__copyright a:hover {
-  color: #38bdf8 !important;
+  color: #ebbcba !important;
 }
 
 .footer .container {
@@ -337,16 +341,13 @@ html[data-theme="dark"] footer.footer {
 .footer__bottom {
   margin-top: 4rem;
   padding-top: 1.75rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  border-top: 1px solid #dfdad9;
 }
 
 [data-theme="dark"] .footer__bottom {
-  border-top-color: rgba(255, 255, 255, 0.06);
+  border-top-color: #26233a;
 }
 
 .footer__copyright {
   font-size: 0.875rem;
 }
-
-
-
