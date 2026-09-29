@@ -1,6 +1,11 @@
 import React from "react";
-import { Mail, Send, MessageSquare } from "lucide-react";
-import { GithubIcon } from "./icons/GithubIcon";
+import { Mail, Send } from "lucide-react";
+import {
+  GithubIcon,
+  LinkedInIcon,
+  DiscordIcon,
+  InstagramIcon,
+} from "./icons/SocialIcons";
 import { PortfolioData } from "../../data/portfolioData";
 import styles from "./portfolio.module.css";
 
@@ -27,6 +32,30 @@ export const PortfolioContact: React.FC<PortfolioContactProps> = ({ contact }) =
           </a>
         )}
 
+        {contact.linkedinUrl && (
+          <a
+            href={contact.linkedinUrl}
+            className={styles.secondaryButton}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <LinkedInIcon size={18} />
+            <span>LinkedIn</span>
+          </a>
+        )}
+
+        {contact.discordUsername && (
+          <a
+            href={`https://discord.com/users/${contact.discordUsername}`}
+            className={styles.secondaryButton}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <DiscordIcon size={18} />
+            <span>Discord</span>
+          </a>
+        )}
+
         {contact.telegramUsername && (
           <a
             href={`https://t.me/${contact.telegramUsername}`}
@@ -39,15 +68,15 @@ export const PortfolioContact: React.FC<PortfolioContactProps> = ({ contact }) =
           </a>
         )}
 
-        {contact.discordServerUrl && (
+        {contact.instagramUrl && (
           <a
-            href={contact.discordServerUrl}
+            href={contact.instagramUrl}
             className={styles.secondaryButton}
             target="_blank"
             rel="noopener noreferrer"
           >
-            <MessageSquare size={18} />
-            <span>Discord</span>
+            <InstagramIcon size={18} />
+            <span>Instagram</span>
           </a>
         )}
 

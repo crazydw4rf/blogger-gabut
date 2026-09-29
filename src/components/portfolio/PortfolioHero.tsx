@@ -10,7 +10,13 @@ import {
   ArrowRight,
   Terminal,
 } from "lucide-react";
-import { GithubIcon } from "./icons/GithubIcon";
+import {
+  GithubIcon,
+  LinkedInIcon,
+  DiscordIcon,
+  InstagramIcon,
+  YouTubeIcon,
+} from "./icons/SocialIcons";
 import { PortfolioData } from "../../data/portfolioData";
 import styles from "./portfolio.module.css";
 
@@ -24,10 +30,16 @@ const renderSocialIcon = (iconName: string) => {
   switch (iconName) {
     case "github":
       return <GithubIcon size={18} />;
+    case "linkedin":
+      return <LinkedInIcon size={18} />;
+    case "discord":
+      return <DiscordIcon size={18} />;
+    case "instagram":
+      return <InstagramIcon size={18} />;
+    case "youtube":
+      return <YouTubeIcon size={18} />;
     case "telegram":
       return <Send size={18} />;
-    case "discord":
-      return <MessageSquare size={18} />;
     case "email":
       return <Mail size={18} />;
     default:
@@ -81,9 +93,41 @@ export const PortfolioHero: React.FC<PortfolioHeroProps> = ({
           <div className={styles.heroRole}>
             <Terminal size={22} className={styles.heroGradientText} />
             <span>{personalInfo.role}</span>
+            {personalInfo.location && (
+              <span
+                style={{
+                  fontSize: "0.85rem",
+                  fontWeight: 500,
+                  color: "var(--ifm-color-emphasis-600)",
+                  marginLeft: "0.5rem",
+                }}
+              >
+                📍 {personalInfo.location}
+              </span>
+            )}
           </div>
 
           <p className={styles.heroBio}>{personalInfo.bio}</p>
+
+          {personalInfo.funFact && (
+            <div
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "0.5rem",
+                fontSize: "0.9rem",
+                fontWeight: 600,
+                color: "var(--ifm-color-emphasis-800)",
+                background: "rgba(2, 132, 199, 0.08)",
+                border: "1px solid rgba(2, 132, 199, 0.2)",
+                padding: "0.45rem 0.95rem",
+                borderRadius: "0.75rem",
+                marginBottom: "1.75rem",
+              }}
+            >
+              <span>{personalInfo.funFact}</span>
+            </div>
+          )}
 
           <div className={styles.heroActions}>
             <Link to="/tutorial" className={styles.primaryButton}>

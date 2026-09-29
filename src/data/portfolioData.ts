@@ -1,7 +1,7 @@
 export interface SocialLink {
   name: string;
   url: string;
-  icon: "github" | "telegram" | "discord" | "email" | "linkedin" | "twitter" | "globe";
+  icon: "github" | "linkedin" | "discord" | "instagram" | "youtube" | "telegram" | "email";
 }
 
 export interface SkillCategory {
@@ -22,7 +22,7 @@ export interface Experience {
   companyUrl?: string;
   location?: string;
   period: string;
-  type?: "Full-Time" | "Part-Time" | "Contract" | "Open Source" | "Community";
+  type?: "Full-Time" | "Part-Time" | "Contract" | "Open Source" | "Community" | "Education";
   description: string;
   highlights?: string[];
   tags: string[];
@@ -38,7 +38,7 @@ export interface Project {
   githubUrl?: string;
   liveUrl?: string;
   featured?: boolean;
-  category?: "SysAdmin & Linux" | "DevOps & Cloud" | "Web & Tools";
+  category?: "Backend & APIs" | "SysAdmin & Linux" | "DevOps & Cloud" | "Web & Tools";
 }
 
 export interface Achievement {
@@ -58,6 +58,7 @@ export interface PortfolioData {
     role: string;
     tagline: string;
     bio: string;
+    funFact?: string;
     avatarUrl: string;
     location: string;
     status: {
@@ -81,32 +82,31 @@ export interface PortfolioData {
     description: string;
     email: string;
     telegramUsername: string;
-    discordServerUrl: string;
+    discordUsername: string;
     githubUsername: string;
+    linkedinUrl: string;
+    instagramUrl: string;
   };
 }
 
 /**
  * =====================================================================
- * PORTFOLIO DATA (EASY TO EDIT & EXPAND)
- * 
- * To add a new project, experience, or skill, simply add a new object
- * to the corresponding array below.
+ * PORTFOLIO DATA (ACCURATE TO GITHUB PROFILE README)
  * =====================================================================
  */
 export const portfolioData: PortfolioData = {
   personalInfo: {
     name: "Binar Nugroho",
     nickname: "crazydw4rf",
-    role: "SysAdmin & Linux Enthusiast",
-    tagline: "Managing systems, architecting infrastructure, and self-hosting services.",
-    bio: "Linux SysAdmin and open-source enthusiast focused on server administration, network infrastructure, and self-hosted environments. Passionate about system reliability, automation, and sharing practical documentation for the community.",
-    // You can replace avatar.png inside static/img/avatar.png anytime
+    role: "Backend Developer & SysAdmin",
+    tagline: "CS Student @ Amikom Purwokerto • Linux & Open Source Enthusiast • Yes, I use Arch btw 🐧",
+    bio: "Computer Science student at Amikom Purwokerto University passionate about backend development, Linux server systems, and self-hosted environments. Currently learning and building with Go, TypeScript, Docker, and Rust. Creator of Blogger Gabut, sharing technical notes and SysAdmin documentation.",
+    funFact: "I love cats (>^◡^<), Linux enthusiast 🐧 — and yes, I use Arch, btw.",
     avatarUrl: "/img/avatar.png",
-    location: "Indonesia",
+    location: "Cilacap, Central Java, Indonesia",
     status: {
       available: true,
-      text: "Open for SysAdmin challenges & collaboration",
+      text: "Open for collaboration & backend/infrastructure projects",
     },
     resumeUrl: "#",
   },
@@ -118,14 +118,29 @@ export const portfolioData: PortfolioData = {
       icon: "github",
     },
     {
-      name: "Telegram",
-      url: "https://t.me/yuki2048",
-      icon: "telegram",
+      name: "LinkedIn",
+      url: "https://www.linkedin.com/in/binar-nugroho",
+      icon: "linkedin",
     },
     {
       name: "Discord",
-      url: "https://discord.gg/8JZ4JBYqeJ",
+      url: "https://discord.com/users/crazydw4rf",
       icon: "discord",
+    },
+    {
+      name: "Instagram",
+      url: "http://www.instagram.com/binar_nugroho_",
+      icon: "instagram",
+    },
+    {
+      name: "YouTube",
+      url: "https://www.youtube.com/@crazydw4rf",
+      icon: "youtube",
+    },
+    {
+      name: "Telegram",
+      url: "https://t.me/yuki2048",
+      icon: "telegram",
     },
     {
       name: "Email",
@@ -136,77 +151,74 @@ export const portfolioData: PortfolioData = {
 
   stats: [
     {
-      label: "Years in Linux",
-      value: "4+",
-      description: "Hands-on server operations & system management",
+      label: "Amikom Purwokerto",
+      value: "CS",
+      description: "Computer Science student & backend explorer",
     },
     {
-      label: "Guides Published",
-      value: "20+",
+      label: "Linux & SysAdmin",
+      value: "4+ Yrs",
+      description: "Hands-on Linux servers, homelabs & networks",
+    },
+    {
+      label: "Documentation",
+      value: "20+ Guides",
       description: "System administration & infrastructure setups",
     },
     {
-      label: "Services Managed",
-      value: "15+",
-      description: "Network, storage, web, and directory systems",
-    },
-    {
-      label: "Projects & Repos",
-      value: "10+",
-      description: "Open source repositories, lab topologies & scripts",
+      label: "Open Source",
+      value: "10+ Repos",
+      description: "Backend projects, configs & dotfiles",
     },
   ],
 
   skills: [
     {
-      title: "Linux & Server Systems",
-      iconName: "server",
-      description: "Operating system administration, package management, and system lifecycle.",
-      skills: [
-        { name: "Linux Administration", level: "Expert" },
-        { name: "Server Architecture", level: "Advanced" },
-        { name: "Shell Scripting", level: "Advanced" },
-        { name: "Service Unit Management", level: "Advanced" },
-        { name: "Storage & Volume Management", level: "Advanced" },
-        { name: "System Optimization", level: "Intermediate" },
-      ],
-    },
-    {
-      title: "Network & Security",
-      iconName: "network",
-      description: "Network routing, perimeter firewalls, and secure communications.",
-      skills: [
-        { name: "Network Infrastructure", level: "Expert" },
-        { name: "Firewall & Traffic Filtering", level: "Advanced" },
-        { name: "Secure VPN Tunnels", level: "Advanced" },
-        { name: "Certificate & Encryption Setup", level: "Advanced" },
-        { name: "Intrusion Prevention & Hardening", level: "Advanced" },
-        { name: "Subnetting & VLAN Routing", level: "Intermediate" },
-      ],
-    },
-    {
-      title: "Services & Virtualization",
-      iconName: "shield",
-      description: "Web proxies, directory services, and containerized workloads.",
-      skills: [
-        { name: "Web Server Infrastructure", level: "Expert" },
-        { name: "Containerization", level: "Advanced" },
-        { name: "Directory & Identity Services", level: "Advanced" },
-        { name: "Virtualization & Hypervisors", level: "Intermediate" },
-        { name: "High Availability & Failover", level: "Intermediate" },
-        { name: "Backup & Recovery Planning", level: "Advanced" },
-      ],
-    },
-    {
-      title: "Tooling & DevOps",
+      title: "Backend Development",
       iconName: "code",
-      description: "Modern developer workflow tools, version control, and automation.",
+      description: "Building scalable server applications, APIs, and microservices.",
       skills: [
-        { name: "Git & Version Control", level: "Advanced" },
-        { name: "CI/CD & Automation", level: "Advanced" },
-        { name: "Technical Documentation", level: "Expert" },
-        { name: "Modern Web Toolchains", level: "Advanced" },
-        { name: "Infrastructure Scripting", level: "Intermediate" },
+        { name: "Go (Golang)", level: "Advanced" },
+        { name: "TypeScript & Node.js", level: "Advanced" },
+        { name: "NestJS Framework", level: "Intermediate" },
+        { name: "PostgreSQL & Databases", level: "Advanced" },
+        { name: "REST APIs & Architecture", level: "Advanced" },
+        { name: "Rust", level: "Beginner" },
+      ],
+    },
+    {
+      title: "Linux & Operating Systems",
+      iconName: "server",
+      description: "Deep affinity for Linux environments, kernel internals, and server lifecycle.",
+      skills: [
+        { name: "Arch Linux & Debian", level: "Expert" },
+        { name: "Bash & Shell Scripting", level: "Advanced" },
+        { name: "Systemd Service Units", level: "Advanced" },
+        { name: "System Optimization", level: "Advanced" },
+        { name: "Storage & File Systems", level: "Intermediate" },
+      ],
+    },
+    {
+      title: "DevOps & Cloud",
+      iconName: "network",
+      description: "Containerization, cloud infrastructure, and continuous integration.",
+      skills: [
+        { name: "Docker & Containerization", level: "Advanced" },
+        { name: "AWS Cloud Services", level: "Intermediate" },
+        { name: "Reverse Proxies & Traffic Routing", level: "Advanced" },
+        { name: "Perimeter Security & Firewalls", level: "Advanced" },
+        { name: "CI/CD & GitHub Actions", level: "Advanced" },
+      ],
+    },
+    {
+      title: "Environment & Tooling",
+      iconName: "cpu",
+      description: "Productivity workflows, modern editor tooling, and developer environments.",
+      skills: [
+        { name: "Neovim & Lua Configs", level: "Advanced" },
+        { name: "Git & Version Control", level: "Expert" },
+        { name: "VS Code", level: "Advanced" },
+        { name: "Docusaurus & Technical Writing", level: "Expert" },
       ],
     },
   ],
@@ -214,6 +226,22 @@ export const portfolioData: PortfolioData = {
   experiences: [
     {
       id: "exp-1",
+      role: "Computer Science Student & Backend Explorer",
+      company: "Amikom Purwokerto University",
+      location: "Central Java, Indonesia",
+      period: "2023 - Present",
+      type: "Education",
+      description:
+        "Pursuing Bachelor's in Computer Science. Focusing on backend architecture, software engineering principles, distributed systems, and modern programming languages.",
+      highlights: [
+        "Developing backend applications using Go, TypeScript, and Docker containerization.",
+        "Exploring database management with PostgreSQL and API design patterns.",
+        "Actively participating in open-source projects and developer communities.",
+      ],
+      tags: ["Go", "TypeScript", "Docker", "PostgreSQL", "Software Engineering"],
+    },
+    {
+      id: "exp-2",
       role: "SysAdmin & Infrastructure Lead",
       company: "Blogger Gabut",
       companyUrl: "https://blog.crazydw4rf.tech",
@@ -221,45 +249,29 @@ export const portfolioData: PortfolioData = {
       period: "2023 - Present",
       type: "Open Source",
       description:
-        "Managing server infrastructure, automated deployment pipelines, and publishing comprehensive system administration documentation.",
+        "Architecting and operating the Blogger Gabut technical publication portal, writing practical Linux server guides, and managing automated deployments.",
       highlights: [
-        "Architected automated continuous deployment workflows ensuring fast, zero-downtime releases.",
-        "Authored dozens of production-ready guides covering core system services and server hardening.",
-        "Integrated fast offline search and visual architectural topology diagrams.",
+        "Created an ultra-fast static documentation pipeline using Bun and GitHub Actions.",
+        "Authored 20+ comprehensive guides for Linux server administrators and students.",
+        "Maintained high uptime and zero-overhead deployments on GitHub Pages.",
       ],
-      tags: ["SysAdmin", "Linux", "DevOps", "Infrastructure", "Automation"],
-    },
-    {
-      id: "exp-2",
-      role: "Network Systems Administrator & Lab Architect",
-      company: "Technical Competition Lab",
-      location: "Indonesia",
-      period: "2022 - 2024",
-      type: "Community",
-      description:
-        "Designed and maintained realistic multi-server lab topologies for vocational IT Network Systems administration.",
-      highlights: [
-        "Built resilient multi-server environments featuring primary and secondary failover services.",
-        "Configured strict network perimeter security, traffic routing, and access control policies.",
-        "Automated system health verification checks and testing scripts.",
-      ],
-      tags: ["Linux", "Networking", "Security", "Automation", "SysAdmin"],
+      tags: ["SysAdmin", "Linux", "Bun", "Docusaurus", "DevOps"],
     },
     {
       id: "exp-3",
-      role: "Self-Hosted Infrastructure Administrator",
-      company: "Personal Homelab",
-      location: "Home Office",
+      role: "Self-Hosted Homelab Administrator",
+      company: "Personal Infrastructure",
+      location: "Cilacap, Indonesia",
       period: "2021 - Present",
       type: "Part-Time",
       description:
-        "Operating an always-on private server infrastructure providing secure remote access, data backups, and containerized services.",
+        "Maintaining private Linux servers, automated offsite backups, Dockerized containers, and secure encrypted tunneling.",
       highlights: [
-        "Maintained high uptime across self-hosted containerized server environments.",
-        "Configured automated SSL certificate renewal and encrypted remote tunneling.",
-        "Implemented scheduled encrypted backup routines with multi-destination redundancy.",
+        "Containerized services ensuring stable 24/7 uptime.",
+        "Implemented encrypted mesh networking and automated TLS renewal.",
+        "Automated recurring backups with multi-destination redundancy.",
       ],
-      tags: ["Self-Hosting", "Containers", "Security", "Linux", "Backups"],
+      tags: ["Linux", "Docker", "Self-Hosting", "Security", "Networking"],
     },
   ],
 
@@ -268,8 +280,8 @@ export const portfolioData: PortfolioData = {
       id: "proj-1",
       title: "Blogger Gabut Documentation Platform",
       description:
-        "Fast, modern technical documentation portal and SysAdmin blog. Built for high performance, structured guides, and accessible technical references.",
-      tags: ["SysAdmin", "Documentation", "TypeScript", "Web"],
+        "A fast, modern technical documentation portal and SysAdmin blog powered by Docusaurus v3, Bun, and TypeScript. Contains in-depth tutorials on Linux server configuration.",
+      tags: ["Docusaurus", "TypeScript", "Bun", "SysAdmin"],
       stars: 12,
       githubUrl: "https://github.com/crazydw4rf/blogger-gabut",
       liveUrl: "https://blog.crazydw4rf.tech",
@@ -278,21 +290,21 @@ export const portfolioData: PortfolioData = {
     },
     {
       id: "proj-2",
-      title: "Linux Server Automation Suite",
+      title: "Backend Services & Microservices",
       description:
-        "Modular shell scripts and configuration templates to provision and harden production Linux servers with optimal security defaults.",
-      tags: ["Linux", "Automation", "Bash", "SysAdmin"],
-      stars: 8,
+        "A suite of learning projects exploring Go, NestJS, and PostgreSQL. Demonstrating clean architecture, authentication, and database migrations.",
+      tags: ["Go", "NestJS", "PostgreSQL", "Docker"],
       githubUrl: "https://github.com/crazydw4rf",
       featured: true,
-      category: "SysAdmin & Linux",
+      category: "Backend & APIs",
     },
     {
       id: "proj-3",
-      title: "Secure Network Gateway & Mesh",
+      title: "Linux Server Automation Suite",
       description:
-        "High-performance encrypted network mesh architecture designed to interconnect remote homelab nodes and devices with zero-trust isolation.",
-      tags: ["Networking", "Security", "VPN", "Linux"],
+        "Automated scripts and configuration templates to provision and harden production Linux servers with optimal security defaults.",
+      tags: ["Linux", "Bash", "Automation", "SysAdmin"],
+      stars: 8,
       githubUrl: "https://github.com/crazydw4rf",
       featured: true,
       category: "SysAdmin & Linux",
@@ -301,8 +313,8 @@ export const portfolioData: PortfolioData = {
       id: "proj-4",
       title: "Containerized Homelab Stack",
       description:
-        "Production-grade container architecture with automated reverse proxying, monitoring, performance metrics, and data synchronization.",
-      tags: ["Containers", "DevOps", "SysAdmin", "Monitoring"],
+        "Production-ready Docker Compose definitions incorporating reverse proxies, monitoring metrics, and secure remote gateways.",
+      tags: ["Docker", "Linux", "DevOps", "Self-Hosting"],
       githubUrl: "https://github.com/crazydw4rf",
       featured: false,
       category: "DevOps & Cloud",
@@ -313,10 +325,10 @@ export const portfolioData: PortfolioData = {
     {
       id: "ach-1",
       title: "IT Network Systems Administration",
-      issuer: "Technical Competition",
+      issuer: "Vocational Skills Competition",
       date: "2023",
       description:
-        "Demonstrated advanced proficiency in enterprise Linux services, security policies, and network routing under strict timeframes.",
+        "Demonstrated advanced proficiency in enterprise Linux services, security policies, and network routing.",
       badge: "Finalist",
     },
     {
@@ -325,7 +337,7 @@ export const portfolioData: PortfolioData = {
       issuer: "Hands-on Practical Labs",
       date: "2024",
       description:
-        "Completed comprehensive multi-node infrastructure setups covering high availability, network filtering, and directory services.",
+        "Constructed multi-node server simulation environments covering high availability, network filtering, and directory services.",
       badge: "Lab Architect",
     },
     {
@@ -334,7 +346,7 @@ export const portfolioData: PortfolioData = {
       issuer: "Tech Community",
       date: "2025",
       description:
-        "Authored step-by-step technical guides helping students and junior administrators master Linux system administration.",
+        "Authored step-by-step guides helping students and junior administrators master Linux system administration.",
       badge: "Contributor",
     },
   ],
@@ -342,10 +354,12 @@ export const portfolioData: PortfolioData = {
   contact: {
     heading: "Let's Connect & Collaborate",
     description:
-      "Interested in Linux systems, infrastructure architecture, or open-source projects? Drop a message anytime!",
+      "Whether you want to discuss backend development in Go/TypeScript, collaborate on open-source, or talk Linux server administration, feel free to reach out!",
     email: "binarnugroho775@gmail.com",
     telegramUsername: "yuki2048",
-    discordServerUrl: "https://discord.gg/8JZ4JBYqeJ",
+    discordUsername: "crazydw4rf",
     githubUsername: "crazydw4rf",
+    linkedinUrl: "https://www.linkedin.com/in/binar-nugroho",
+    instagramUrl: "http://www.instagram.com/binar_nugroho_",
   },
 };
