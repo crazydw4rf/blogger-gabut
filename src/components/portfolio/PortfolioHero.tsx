@@ -109,26 +109,6 @@ export const PortfolioHero: React.FC<PortfolioHeroProps> = ({
 
           <p className={styles.heroBio}>{personalInfo.bio}</p>
 
-          {personalInfo.funFact && (
-            <div
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "0.5rem",
-                fontSize: "0.9rem",
-                fontWeight: 600,
-                color: "var(--ifm-color-emphasis-800)",
-                background: "rgba(2, 132, 199, 0.08)",
-                border: "1px solid rgba(2, 132, 199, 0.2)",
-                padding: "0.45rem 0.95rem",
-                borderRadius: "0.75rem",
-                marginBottom: "1.75rem",
-              }}
-            >
-              <span>{personalInfo.funFact}</span>
-            </div>
-          )}
-
           <div className={styles.heroActions}>
             <Link to="/tutorial" className={styles.primaryButton}>
               <BookOpen size={18} />
