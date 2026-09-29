@@ -208,17 +208,11 @@ function Footer(): ReactNode {
           </div>
         </div>
 
-        {/* Bottom Strip: Copyright & System Specs */}
+        {/* Bottom Strip: Copyright */}
         <div className={styles.footerBottomStrip}>
           <p className={styles.copyrightText}>
             © {new Date().getFullYear()} <strong>{personalInfo.name}</strong> ({personalInfo.nickname}) • Built with <strong>Bun</strong> &amp; <strong>Docusaurus Faster</strong>
           </p>
-
-          <div className={styles.techBadges}>
-            <span className={styles.techBadge}>Arch Linux 🐧</span>
-            <span className={styles.techBadge}>Debian 12 🌐</span>
-            <span className={styles.techBadge}>No Purple Policy 🚫🟣</span>
-          </div>
         </div>
       </div>
     </footer>
