@@ -93,7 +93,6 @@ const config: Config = {
       ],
     },
     footer: {
-      style: "dark",
       links: [
         {
           title: "Navigation",
@@ -151,7 +150,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Blogger Gabut. Linux SysAdmin & Infrastructure Notes. Built with <a href="https://docusaurus.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">Docusaurus</a>.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Blogger Gabut. Built with <a href="https://docusaurus.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">Docusaurus</a>.`,
     },
     prism: {
       theme: prismThemes.github,
@@ -180,11 +179,6 @@ const config: Config = {
         hideable: true,
         autoCollapseCategories: false,
       },
-    },
-    announcementBar: {
-      id: "announcement_bar",
-      content: "Masih dalam pengembangan",
-      isCloseable: true,
     },
     mermaid: {
       options: {
