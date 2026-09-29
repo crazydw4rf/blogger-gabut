@@ -79,13 +79,18 @@ export interface PortfolioData {
   achievements: Achievement[];
   contact: {
     heading: string;
-    description: string;
+    subheading: string;
+    quote: string;
+    location: string;
+    openForOpportunities: boolean;
+    image: string;
     email: string;
     telegramUsername: string;
     discordUsername: string;
     githubUsername: string;
     linkedinUrl: string;
     instagramUrl: string;
+    youtubeUrl?: string;
   };
 }
 
@@ -352,14 +357,18 @@ export const portfolioData: PortfolioData = {
   ],
 
   contact: {
-    heading: "Let's Connect & Collaborate",
-    description:
-      "Whether you want to discuss backend development in Go/TypeScript, collaborate on open-source, or talk Linux server administration, feel free to reach out!",
+    heading: "Reach Out to me!",
+    subheading: "DISCUSS A PROJECT OR JUST WANT TO SAY HI? MY INBOX IS OPEN FOR ALL.",
+    quote: "Computer Science Student @Amikom Purwokerto | Backend Developer & SysAdmin",
+    location: "Cilacap, Central Java, Indonesia",
+    openForOpportunities: true,
+    image: "/cat-bg.webp",
     email: "binarnugroho775@gmail.com",
     telegramUsername: "yuki2048",
     discordUsername: "crazydw4rf",
     githubUsername: "crazydw4rf",
     linkedinUrl: "https://www.linkedin.com/in/binar-nugroho",
     instagramUrl: "http://www.instagram.com/binar_nugroho_",
+    youtubeUrl: "https://www.youtube.com/@crazydw4rf",
   },
 };

@@ -93,64 +93,7 @@ const config: Config = {
       ],
     },
     footer: {
-      links: [
-        {
-          title: "Navigation",
-          items: [
-            {
-              label: "Portfolio",
-              to: "/",
-            },
-            {
-              label: "Tutorials",
-              to: "/tutorial",
-            },
-            {
-              label: "Tech Blog",
-              to: "/blog",
-            },
-          ],
-        },
-        {
-          title: "Documentation",
-          items: [
-            {
-              label: "Linux Server Guides",
-              to: "/tutorial",
-            },
-            {
-              label: "Network Infrastructure",
-              to: "/tutorial",
-            },
-            {
-              label: "Perimeter Security",
-              to: "/tutorial",
-            },
-          ],
-        },
-        {
-          title: "Connect",
-          items: [
-            {
-              label: "GitHub",
-              href: "https://github.com/crazydw4rf",
-            },
-            {
-              label: "Telegram",
-              href: "https://t.me/yuki2048",
-            },
-            {
-              label: "Discord Server",
-              href: "https://discord.gg/8JZ4JBYqeJ",
-            },
-            {
-              label: "Email",
-              href: "mailto:binarnugroho775@gmail.com",
-            },
-          ],
-        },
-      ],
-      copyright: `Copyright © ${new Date().getFullYear()} Blogger Gabut. Built with <a href="https://docusaurus.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">Docusaurus</a>.`,
+      style: "dark",
     },
     prism: {
       theme: prismThemes.github,

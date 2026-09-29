@@ -8,7 +8,6 @@ import { PortfolioSkills } from "../components/portfolio/PortfolioSkills";
 import { PortfolioExperience } from "../components/portfolio/PortfolioExperience";
 import { PortfolioProjects } from "../components/portfolio/PortfolioProjects";
 import { PortfolioAchievements } from "../components/portfolio/PortfolioAchievements";
-import { PortfolioContact } from "../components/portfolio/PortfolioContact";
 import styles from "../components/portfolio/portfolio.module.css";
 
 export default function Home(): JSX.Element {
@@ -35,8 +34,6 @@ export default function Home(): JSX.Element {
         <PortfolioProjects projects={portfolioData.projects} />
 
         <PortfolioAchievements achievements={portfolioData.achievements} />
-
-        <PortfolioContact contact={portfolioData.contact} />
       </main>
     </Layout>
   );
