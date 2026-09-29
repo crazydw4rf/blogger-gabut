@@ -1,12 +1,4 @@
-/* ==========================================================================
-   ROSÉ PINE DAWN & ROSÉ PINE THEME SYSTEM
-   Official Palette: https://rosepinetheme.com
-   ========================================================================== */
-
 :root {
-  /* --------------------------------------------------------------------------
-     ROSÉ PINE DAWN (LIGHT) PALETTE
-     -------------------------------------------------------------------------- */
   --rp-base: #faf4ed;
   --rp-surface: #fffaf3;
   --rp-overlay: #f2e9e1;
@@ -23,7 +15,6 @@
   --rp-highlight-med: #dfdad9;
   --rp-highlight-high: #cecacd;
 
-  /* Primary Brand: Pine Teal (#286983) */
   --ifm-color-primary: #286983;
   --ifm-color-primary-dark: #245f76;
   --ifm-color-primary-darker: #225970;
@@ -32,25 +23,21 @@
   --ifm-color-primary-lighter: #307c9b;
   --ifm-color-primary-lightest: #3991b5;
 
-  /* Canvas & Elevated Surfaces */
   --ifm-background-color: var(--rp-base);
   --ifm-background-surface-color: var(--rp-surface);
   --ifm-card-background-color: var(--rp-surface);
   --ifm-navbar-background-color: var(--rp-surface);
   --ifm-footer-background-color: var(--rp-overlay);
 
-  /* Typography */
   --ifm-font-color-base: var(--rp-text);
   --ifm-heading-color: var(--rp-text);
   --ifm-color-content: var(--rp-text);
   --ifm-color-content-secondary: var(--rp-subtle);
 
-  /* Borders & Dividers */
   --ifm-border-color: var(--rp-overlay);
   --ifm-toc-border-color: var(--rp-highlight-med);
   --ifm-hr-border-color: var(--rp-highlight-med);
 
-  /* Code block highlight */
   --docusaurus-highlighted-code-line-bg: rgba(40, 105, 131, 0.1);
 
   --ifm-code-font-size: 95%;
@@ -58,9 +45,6 @@
 }
 
 [data-theme="dark"] {
-  /* --------------------------------------------------------------------------
-     ROSÉ PINE MAIN (DARK) PALETTE
-     -------------------------------------------------------------------------- */
   --rp-base: #191724;
   --rp-surface: #1f1d2e;
   --rp-overlay: #26233a;
@@ -77,7 +61,6 @@
   --rp-highlight-med: #403d52;
   --rp-highlight-high: #524f67;
 
-  /* Primary Brand: Rosé (#ebbcba) */
   --ifm-color-primary: #ebbcba;
   --ifm-color-primary-dark: #e8adaa;
   --ifm-color-primary-darker: #e6a5a2;
@@ -86,24 +69,20 @@
   --ifm-color-primary-lighter: #f0d2d1;
   --ifm-color-primary-lightest: #f7e9e8;
 
-  /* Canvas & Elevated Surfaces */
   --ifm-background-color: var(--rp-base);
   --ifm-background-surface-color: var(--rp-surface);
   --ifm-card-background-color: var(--rp-surface);
   --ifm-navbar-background-color: var(--rp-surface);
   --ifm-footer-background-color: var(--rp-base);
 
-  /* Typography */
   --ifm-font-color-base: var(--rp-text);
   --ifm-heading-color: var(--rp-text);
   --ifm-color-content: var(--rp-text);
   --ifm-color-content-secondary: var(--rp-subtle);
 
-  /* Borders & Dividers */
   --ifm-border-color: var(--rp-overlay);
   --ifm-toc-border-color: var(--rp-highlight-med);
   --ifm-hr-border-color: var(--rp-highlight-med);
 
-  /* Code block highlight */
   --docusaurus-highlighted-code-line-bg: rgba(235, 188, 186, 0.15);
 }

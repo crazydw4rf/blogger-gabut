@@ -1,9 +1,3 @@
-/* ==========================================================================
-   PORTFOLIO STYLING - ROSÉ PINE DAWN (LIGHT) & ROSÉ PINE MAIN (DARK)
-   Palette: Base, Surface, Overlay, Muted, Subtle, Text, Love, Gold, Rose, Pine, Foam, Iris
-   ========================================================================== */
-
-/* Main Container - Expansive width utilization with zero mobile overflow */
 .portfolioContainer {
   width: 100%;
   max-width: 1600px;
@@ -13,7 +7,6 @@
   overflow-x: clip;
 }
 
-/* Common Section Headers */
 .sectionWrapper {
   margin-top: clamp(3.5rem, 6vw, 5.5rem);
   position: relative;
@@ -71,9 +64,6 @@
   word-break: break-word;
 }
 
-/* --------------------------------------------------------------------------
-   HERO SECTION - CLEAN, UNWRAPPED OPEN CANVAS LAYOUT (ROSÉ PINE DAWN)
-   -------------------------------------------------------------------------- */
 .heroCard {
   position: relative;
   display: flex;
@@ -163,14 +153,12 @@
   overflow-wrap: break-word;
 }
 
-/* Rosé Pine Dawn: Rose (#d7827e) -> Love (#b4637a) -> Pine (#286983) */
 .heroGradientText {
   background: linear-gradient(135deg, #d7827e 0%, #b4637a 40%, #286983 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* Rosé Pine Main: Rose (#ebbcba) -> Love (#eb6f92) -> Foam (#9ccfd8) */
 [data-theme="dark"] .heroGradientText {
   background: linear-gradient(135deg, #ebbcba 0%, #eb6f92 40%, #9ccfd8 100%);
   -webkit-background-clip: text;
@@ -337,7 +325,6 @@
   background: #26233a;
 }
 
-/* HERO AVATAR DISPLAY - ROSÉ PINE GLOW & BORDERS */
 .heroAvatarWrapper {
   position: relative;
   display: flex;
@@ -402,9 +389,6 @@
   box-shadow: 0 24px 55px -10px rgba(0, 0, 0, 0.8), 0 0 25px rgba(235, 188, 186, 0.25);
 }
 
-/* --------------------------------------------------------------------------
-   STATS COUNTER ROW - DIRECT ON PAGE (ROSÉ PINE)
-   -------------------------------------------------------------------------- */
 .statsGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
@@ -469,9 +453,6 @@
   margin: 0;
 }
 
-/* --------------------------------------------------------------------------
-   QUICK JUMP SUBNAV - DIRECT & MINIMAL ON CANVAS
-   -------------------------------------------------------------------------- */
 .portfolioNav {
   display: flex;
   align-items: center;
@@ -515,9 +496,6 @@
   color: #ebbcba;
 }
 
-/* --------------------------------------------------------------------------
-   SKILLS SECTION - CLEAN EXPERTISE CARDS
-   -------------------------------------------------------------------------- */
 .skillsGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
@@ -635,9 +613,6 @@
   background: rgba(235, 111, 146, 0.18);
 }
 
-/* --------------------------------------------------------------------------
-   EXPERIENCE / JOBS TIMELINE
-   -------------------------------------------------------------------------- */
 .timeline {
   display: flex;
   flex-direction: column;
@@ -815,9 +790,6 @@
   border-color: rgba(156, 207, 216, 0.25);
 }
 
-/* --------------------------------------------------------------------------
-   PROJECTS SECTION
-   -------------------------------------------------------------------------- */
 .projectsGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
@@ -952,9 +924,6 @@
   color: #ebbcba;
 }
 
-/* --------------------------------------------------------------------------
-   ACHIEVEMENTS SECTION
-   -------------------------------------------------------------------------- */
 .achievementsGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
@@ -1037,9 +1006,6 @@
   word-break: break-word;
 }
 
-/* --------------------------------------------------------------------------
-   RESPONSIVE DESIGN ACROSS ALL MOBILE VIEWPORTS
-   -------------------------------------------------------------------------- */
 @media (max-width: 768px) {
   .heroCard {
     align-items: flex-start;

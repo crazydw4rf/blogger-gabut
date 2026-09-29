@@ -40,7 +40,6 @@ export const PortfolioProjects: React.FC<PortfolioProjectsProps> = ({ projects }
           tooling built for stability and community learning.
         </p>
 
-        {/* Filter buttons */}
         {categories.length > 2 && (
           <div
             style={{

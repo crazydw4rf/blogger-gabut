@@ -24,7 +24,6 @@ export const PortfolioHero: React.FC<PortfolioHeroProps> = ({
     const y = e.clientY - rect.top;
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
-    // Calculate rotation (-14 to 14 degrees)
     const rotateX = ((y - centerY) / centerY) * -14;
     const rotateY = ((x - centerX) / centerX) * 14;
     setTilt({ x: rotateX, y: rotateY, active: true });
@@ -94,7 +93,6 @@ export const PortfolioHero: React.FC<PortfolioHeroProps> = ({
             }}
             loading="eager"
             onError={(e) => {
-              // Fallback if avatar.png is not yet provided locally
               const target = e.currentTarget as HTMLImageElement;
               if (target.src !== "https://github.com/crazydw4rf.png") {
                 target.src = "https://github.com/crazydw4rf.png";
@@ -104,7 +102,6 @@ export const PortfolioHero: React.FC<PortfolioHeroProps> = ({
         </div>
       </div>
 
-      {/* Stats Counter Row */}
       {stats && stats.length > 0 && (
         <div className={styles.statsGrid}>
           {stats.map((stat, idx) => (

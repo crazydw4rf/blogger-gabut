@@ -9,19 +9,37 @@ import {
   YouTubeIcon,
   TelegramIcon,
 } from "../../components/portfolio/icons/SocialIcons";
-import { portfolioData } from "../../data/portfolioData";
+import { portfolioData, type SocialLink } from "../../data/portfolioData";
 import styles from "./footer.module.css";
 
+const socialIconMap: Record<SocialLink["icon"], ReactNode> = {
+  github: <GithubIcon size={20} />,
+  linkedin: <LinkedInIcon size={18} />,
+  email: <Mail size={18} />,
+  telegram: <TelegramIcon size={18} />,
+  discord: <DiscordIcon size={18} />,
+  instagram: <InstagramIcon size={18} />,
+  youtube: <YouTubeIcon size={18} />,
+};
+
+const socialClassMap: Record<SocialLink["icon"], string> = {
+  github: styles.circleGithub,
+  linkedin: styles.circleLinkedin,
+  email: styles.circleEmail,
+  telegram: styles.circleTelegram,
+  discord: styles.circleDiscord,
+  instagram: styles.circleInstagram,
+  youtube: styles.circleYoutube,
+};
+
 function Footer(): ReactNode {
-  const { contact, personalInfo } = portfolioData;
+  const { contact, personalInfo, socialLinks } = portfolioData;
   const catImageSrc = useBaseUrl(contact.image || "/img/cat-bg.webp");
 
   return (
     <footer id="contact" className={styles.customFooter}>
       <div className={styles.footerContainer}>
-        {/* Main Two-Column Row */}
         <div className={styles.footerMainGrid}>
-          {/* Column 1: Let's Connect Info & Links (~40%) */}
           <div className={styles.connectColumn}>
             <div className={styles.terminalTag}>
               <span>// contact &amp; socials</span>
@@ -59,101 +77,22 @@ function Footer(): ReactNode {
               </div>
             </div>
 
-            {/* Social Circle Buttons */}
             <div className={styles.socialCircles}>
-              {contact.githubUsername && (
+              {socialLinks.map((item) => (
                 <a
-                  href={`https://github.com/${contact.githubUsername}`}
-                  className={`${styles.circleButton} ${styles.circleGithub}`}
+                  key={item.name}
+                  href={item.url}
+                  className={`${styles.circleButton} ${socialClassMap[item.icon] || ""}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="GitHub Profile"
-                  title="GitHub"
+                  aria-label={item.name}
+                  title={item.name}
                 >
-                  <GithubIcon size={20} />
+                  {socialIconMap[item.icon]}
                 </a>
-              )}
-
-              {contact.linkedinUrl && (
-                <a
-                  href={contact.linkedinUrl}
-                  className={`${styles.circleButton} ${styles.circleLinkedin}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="LinkedIn Profile"
-                  title="LinkedIn"
-                >
-                  <LinkedInIcon size={18} />
-                </a>
-              )}
-
-              {contact.email && (
-                <a
-                  href={`mailto:${contact.email}`}
-                  className={`${styles.circleButton} ${styles.circleEmail}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Send Email"
-                  title="Email"
-                >
-                  <Mail size={18} />
-                </a>
-              )}
-
-              {contact.telegramUsername && (
-                <a
-                  href={`https://t.me/${contact.telegramUsername}`}
-                  className={`${styles.circleButton} ${styles.circleTelegram}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Telegram"
-                  title="Telegram"
-                >
-                  <TelegramIcon size={18} />
-                </a>
-              )}
-
-              {contact.discordUsername && (
-                <a
-                  href={`https://discord.com/users/${contact.discordUsername}`}
-                  className={`${styles.circleButton} ${styles.circleDiscord}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Discord"
-                  title="Discord"
-                >
-                  <DiscordIcon size={18} />
-                </a>
-              )}
-
-              {contact.instagramUrl && (
-                <a
-                  href={contact.instagramUrl}
-                  className={`${styles.circleButton} ${styles.circleInstagram}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Instagram"
-                  title="Instagram"
-                >
-                  <InstagramIcon size={18} />
-                </a>
-              )}
-
-              {contact.youtubeUrl && (
-                <a
-                  href={contact.youtubeUrl}
-                  className={`${styles.circleButton} ${styles.circleYoutube}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="YouTube"
-                  title="YouTube"
-                >
-                  <YouTubeIcon size={18} />
-                </a>
-              )}
+              ))}
             </div>
 
-            {/* Quick Navigation Strip */}
             <div className={styles.quickNavStrip}>
               <a href="/" className={styles.quickNavLink}>
                 Home / Portfolio
@@ -178,7 +117,6 @@ function Footer(): ReactNode {
             </div>
           </div>
 
-          {/* Column 2: Wide Panoramic Cat Banner Card (~60%, WIDER) */}
           <div className={styles.catColumn}>
             <div className={styles.catBannerCard}>
               <div className={styles.catCardHeader}>
@@ -208,10 +146,9 @@ function Footer(): ReactNode {
           </div>
         </div>
 
-        {/* Bottom Strip: Copyright */}
         <div className={styles.footerBottomStrip}>
           <p className={styles.copyrightText}>
-            © {new Date().getFullYear()} <strong>{personalInfo.name}</strong> ({personalInfo.nickname}) • Built with <strong>Bun</strong> &amp; <strong>Docusaurus Faster</strong>
+            © {new Date().getFullYear()} Built with <a href="https://docusaurus.io/" target="_blank"><strong>Docusaurus</strong></a>
           </p>
         </div>
       </div>

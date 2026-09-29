@@ -94,11 +94,6 @@ export interface PortfolioData {
   };
 }
 
-/**
- * =====================================================================
- * PORTFOLIO DATA (ACCURATE TO GITHUB PROFILE README)
- * =====================================================================
- */
 export const portfolioData: PortfolioData = {
   personalInfo: {
     name: "Binar Nugroho",
@@ -128,29 +123,14 @@ export const portfolioData: PortfolioData = {
       icon: "linkedin",
     },
     {
-      name: "Discord",
-      url: "https://discord.com/users/crazydw4rf",
-      icon: "discord",
-    },
-    {
-      name: "Instagram",
-      url: "http://www.instagram.com/binar_nugroho_",
-      icon: "instagram",
-    },
-    {
-      name: "YouTube",
-      url: "https://www.youtube.com/@crazydw4rf",
-      icon: "youtube",
-    },
-    {
-      name: "Telegram",
-      url: "https://t.me/yuki2048",
-      icon: "telegram",
-    },
-    {
       name: "Email",
       url: "mailto:binarnugroho775@gmail.com",
       icon: "email",
+    },
+    {
+      name: "Instagram",
+      url: "https://www.instagram.com/binar_nugroho_",
+      icon: "instagram",
     },
   ],
 
@@ -361,7 +341,7 @@ export const portfolioData: PortfolioData = {
     subheading: "DISCUSS A PROJECT OR JUST WANT TO SAY HI? MY INBOX IS OPEN FOR ALL.",
     quote: "Computer Science Student @Amikom Purwokerto | Backend Developer & SysAdmin",
     location: "Cilacap, Central Java, Indonesia",
-    openForOpportunities: true,
+    openForOpportunities: false,
     image: "/img/cat-bg.webp",
     email: "binarnugroho775@gmail.com",
     telegramUsername: "yuki2048",
