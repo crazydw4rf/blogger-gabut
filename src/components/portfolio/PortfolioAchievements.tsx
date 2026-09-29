@@ -32,12 +32,14 @@ export const PortfolioAchievements: React.FC<PortfolioAchievementsProps> = ({
               <Award size={22} />
             </div>
 
-            <div style={{ flex: 1 }}>
+            <div style={{ flex: 1, minWidth: 0 }}>
               <div
                 style={{
                   display: "flex",
                   justifyContent: "space-between",
                   alignItems: "baseline",
+                  flexWrap: "wrap",
+                  gap: "0.25rem 0.5rem",
                   marginBottom: "0.25rem",
                 }}
               >

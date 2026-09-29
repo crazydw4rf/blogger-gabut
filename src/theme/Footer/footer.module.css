@@ -8,9 +8,9 @@
   background-color: #f8fafc;
   border-top: 1px solid rgba(2, 132, 199, 0.15);
   color: #334155;
-  padding: 4.5rem clamp(1.25rem, 3.5vw, 3.5rem) 2.5rem;
+  padding: 4rem clamp(1rem, 3.5vw, 3.5rem) 2.5rem;
   position: relative;
-  overflow: hidden;
+  overflow-x: clip;
 }
 
 [data-theme="dark"] .customFooter {
@@ -67,12 +67,13 @@
 }
 
 .connectTitle {
-  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  font-size: clamp(1.65rem, 5vw, 2.75rem);
   font-weight: 800;
   letter-spacing: -0.025em;
   line-height: 1.15;
   margin: 0;
   color: #0f172a;
+  word-break: break-word;
 }
 
 [data-theme="dark"] .connectTitle {
@@ -495,3 +496,36 @@
     justify-content: center;
   }
 }
+
+@media (max-width: 480px) {
+  .customFooter {
+    padding: 3rem 0.85rem 2rem;
+  }
+
+  .footerContainer {
+    gap: 2.25rem;
+  }
+
+  .connectTitle {
+    font-size: 1.6rem;
+  }
+
+  .catImageFrame {
+    height: 180px;
+  }
+
+  .circleButton {
+    width: 38px;
+    height: 38px;
+  }
+
+  .socialCircles {
+    gap: 0.5rem;
+  }
+
+  .metaItem,
+  .opportunityBadge {
+    font-size: 0.875rem;
+  }
+}
+

@@ -35,34 +35,43 @@ export const PortfolioExperience: React.FC<PortfolioExperienceProps> = ({
               <div className={styles.experienceTop}>
                 <div>
                   <h3 className={styles.experienceRole}>{exp.role}</h3>
-                  {exp.companyUrl ? (
-                    <a
-                      href={exp.companyUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={styles.experienceCompany}
-                    >
-                      <span>{exp.company}</span>
-                      <ExternalLink size={14} />
-                    </a>
-                  ) : (
-                    <span className={styles.experienceCompany}>{exp.company}</span>
-                  )}
-                  {exp.location && (
-                    <span
-                      style={{
-                        marginLeft: "0.75rem",
-                        fontSize: "0.85rem",
-                        color: "var(--ifm-color-emphasis-600)",
-                        display: "inline-flex",
-                        alignItems: "center",
-                        gap: "0.25rem",
-                      }}
-                    >
-                      <MapPin size={13} />
-                      {exp.location}
-                    </span>
-                  )}
+                  <div
+                    style={{
+                      display: "flex",
+                      flexWrap: "wrap",
+                      alignItems: "center",
+                      gap: "0.35rem 0.75rem",
+                      marginTop: "0.25rem",
+                    }}
+                  >
+                    {exp.companyUrl ? (
+                      <a
+                        href={exp.companyUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.experienceCompany}
+                      >
+                        <span>{exp.company}</span>
+                        <ExternalLink size={14} />
+                      </a>
+                    ) : (
+                      <span className={styles.experienceCompany}>{exp.company}</span>
+                    )}
+                    {exp.location && (
+                      <span
+                        style={{
+                          fontSize: "0.85rem",
+                          color: "var(--ifm-color-emphasis-600)",
+                          display: "inline-flex",
+                          alignItems: "center",
+                          gap: "0.25rem",
+                        }}
+                      >
+                        <MapPin size={13} />
+                        {exp.location}
+                      </span>
+                    )}
+                  </div>
                 </div>
 
                 <div className={styles.experiencePeriod}>

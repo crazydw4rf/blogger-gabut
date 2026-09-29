@@ -9,6 +9,7 @@ import {
   BookOpen,
   ArrowRight,
   Terminal,
+  MapPin,
 } from "lucide-react";
 import {
   GithubIcon,
@@ -91,18 +92,14 @@ export const PortfolioHero: React.FC<PortfolioHeroProps> = ({
           </h1>
 
           <div className={styles.heroRole}>
-            <Terminal size={22} className={styles.heroGradientText} />
-            <span>{personalInfo.role}</span>
+            <span className={styles.heroRoleText}>
+              <Terminal size={20} className={styles.heroGradientText} />
+              <span>{personalInfo.role}</span>
+            </span>
             {personalInfo.location && (
-              <span
-                style={{
-                  fontSize: "0.85rem",
-                  fontWeight: 500,
-                  color: "var(--ifm-color-emphasis-600)",
-                  marginLeft: "0.5rem",
-                }}
-              >
-                📍 {personalInfo.location}
+              <span className={styles.heroLocationBadge}>
+                <MapPin size={13} />
+                <span>{personalInfo.location}</span>
               </span>
             )}
           </div>
