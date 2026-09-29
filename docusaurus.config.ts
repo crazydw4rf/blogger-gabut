@@ -11,7 +11,42 @@ const config: Config = {
   baseUrl: process.env.GITHUB_ACTIONS == "true" ? "/blogger-gabut" : "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
-  favicon: "img/favicon.ico",
+  favicon: "favicon.ico",
+  headTags: [
+    {
+      tagName: "link",
+      attributes: {
+        rel: "apple-touch-icon",
+        sizes: "180x180",
+        href: "/apple-touch-icon.png",
+      },
+    },
+    {
+      tagName: "link",
+      attributes: {
+        rel: "icon",
+        type: "image/png",
+        sizes: "32x32",
+        href: "/favicon-32x32.png",
+      },
+    },
+    {
+      tagName: "link",
+      attributes: {
+        rel: "icon",
+        type: "image/png",
+        sizes: "16x16",
+        href: "/favicon-16x16.png",
+      },
+    },
+    {
+      tagName: "link",
+      attributes: {
+        rel: "manifest",
+        href: "/site.webmanifest",
+      },
+    },
+  ],
   organizationName: "crazydw4rf",
   projectName: "blogger-gabut",
   i18n: {
@@ -73,13 +108,6 @@ const config: Config = {
     navbar: {
       hideOnScroll: false,
       title: "Blogger Gabut",
-      logo: {
-        alt: "Blogger Gabut Logo",
-        src: "img/logo.png",
-        className: "my-logo",
-        width: 32,
-        height: 32,
-      },
       items: [
         { to: "/", label: "Portfolio", position: "left", exact: true },
         { to: "/tutorial", label: "Tutorials", position: "left" },

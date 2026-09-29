@@ -362,7 +362,7 @@ export const portfolioData: PortfolioData = {
     quote: "Computer Science Student @Amikom Purwokerto | Backend Developer & SysAdmin",
     location: "Cilacap, Central Java, Indonesia",
     openForOpportunities: true,
-    image: "/cat-bg.webp",
+    image: "/img/cat-bg.webp",
     email: "binarnugroho775@gmail.com",
     telegramUsername: "yuki2048",
     discordUsername: "crazydw4rf",

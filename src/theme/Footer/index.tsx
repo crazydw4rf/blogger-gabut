@@ -14,7 +14,7 @@ import styles from "./footer.module.css";
 
 function Footer(): ReactNode {
   const { contact, personalInfo } = portfolioData;
-  const catImageSrc = useBaseUrl(contact.image || "/cat-bg.webp");
+  const catImageSrc = useBaseUrl(contact.image || "/img/cat-bg.webp");
 
   return (
     <footer id="contact" className={styles.customFooter}>
