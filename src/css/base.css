@@ -1,23 +1,88 @@
 :root {
-  --ifm-color-primary: #40a5d4;
-  --ifm-color-primary-dark: #22b8ff;
-  --ifm-color-primary-darker: #12b2ff;
-  --ifm-color-primary-darkest: #0098e1;
-  --ifm-color-primary-light: #62ccff;
-  --ifm-color-primary-lighter: #72d2ff;
-  --ifm-color-primary-lightest: #a2e1ff;
+  --rp-base: #faf4ed;
+  --rp-surface: #fffaf3;
+  --rp-overlay: #f2e9e1;
+  --rp-muted: #9893a5;
+  --rp-subtle: #797593;
+  --rp-text: #575279;
+  --rp-love: #b4637a;
+  --rp-gold: #ea9d34;
+  --rp-rose: #d7827e;
+  --rp-pine: #286983;
+  --rp-foam: #56949f;
+  --rp-iris: #907aa9;
+  --rp-highlight-low: #f4ede8;
+  --rp-highlight-med: #dfdad9;
+  --rp-highlight-high: #cecacd;
+
+  --ifm-color-primary: #286983;
+  --ifm-color-primary-dark: #245f76;
+  --ifm-color-primary-darker: #225970;
+  --ifm-color-primary-darkest: #1c495c;
+  --ifm-color-primary-light: #2c7490;
+  --ifm-color-primary-lighter: #307c9b;
+  --ifm-color-primary-lightest: #3991b5;
+
+  --ifm-background-color: var(--rp-base);
+  --ifm-background-surface-color: var(--rp-surface);
+  --ifm-card-background-color: var(--rp-surface);
+  --ifm-navbar-background-color: var(--rp-surface);
+  --ifm-footer-background-color: var(--rp-overlay);
+
+  --ifm-font-color-base: var(--rp-text);
+  --ifm-heading-color: var(--rp-text);
+  --ifm-color-content: var(--rp-text);
+  --ifm-color-content-secondary: var(--rp-subtle);
+
+  --ifm-border-color: var(--rp-overlay);
+  --ifm-toc-border-color: var(--rp-highlight-med);
+  --ifm-hr-border-color: var(--rp-highlight-med);
+
+  --docusaurus-highlighted-code-line-bg: rgba(40, 105, 131, 0.1);
+
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-global-radius: 4px;
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme="dark"] {
-  --ifm-color-primary: #86b6f6;
-  --ifm-color-primary-dark: #63a1f3;
-  --ifm-color-primary-darker: #5196f2;
-  --ifm-color-primary-darkest: #5f9ff3;
-  --ifm-color-primary-light: #a9cbf9;
-  --ifm-color-primary-lighter: #bbd6fa;
-  --ifm-color-primary-lightest: #f0f6fe;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --rp-base: #191724;
+  --rp-surface: #1f1d2e;
+  --rp-overlay: #26233a;
+  --rp-muted: #6e6a86;
+  --rp-subtle: #908caa;
+  --rp-text: #e0def4;
+  --rp-love: #eb6f92;
+  --rp-gold: #f6c177;
+  --rp-rose: #ebbcba;
+  --rp-pine: #31748f;
+  --rp-foam: #9ccfd8;
+  --rp-iris: #c4a7e7;
+  --rp-highlight-low: #21202e;
+  --rp-highlight-med: #403d52;
+  --rp-highlight-high: #524f67;
+
+  --ifm-color-primary: #ebbcba;
+  --ifm-color-primary-dark: #e8adaa;
+  --ifm-color-primary-darker: #e6a5a2;
+  --ifm-color-primary-darkest: #df8e8a;
+  --ifm-color-primary-light: #eecbc9;
+  --ifm-color-primary-lighter: #f0d2d1;
+  --ifm-color-primary-lightest: #f7e9e8;
+
+  --ifm-background-color: var(--rp-base);
+  --ifm-background-surface-color: var(--rp-surface);
+  --ifm-card-background-color: var(--rp-surface);
+  --ifm-navbar-background-color: var(--rp-surface);
+  --ifm-footer-background-color: var(--rp-base);
+
+  --ifm-font-color-base: var(--rp-text);
+  --ifm-heading-color: var(--rp-text);
+  --ifm-color-content: var(--rp-text);
+  --ifm-color-content-secondary: var(--rp-subtle);
+
+  --ifm-border-color: var(--rp-overlay);
+  --ifm-toc-border-color: var(--rp-highlight-med);
+  --ifm-hr-border-color: var(--rp-highlight-med);
+
+  --docusaurus-highlighted-code-line-bg: rgba(235, 188, 186, 0.15);
 }

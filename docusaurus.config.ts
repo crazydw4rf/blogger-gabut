@@ -1,8 +1,120 @@
 import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
 import type { PluginOptions as SearchLocalPluginOptions } from "@easyops-cn/docusaurus-search-local";
-import { themes as prismThemes } from "prism-react-renderer";
+import { type PrismTheme } from "prism-react-renderer";
 import type { ThemeConfig as MermaidThemeConfig } from "@docusaurus/theme-mermaid";
+
+const rosePineDawnPrismTheme: PrismTheme = {
+  plain: {
+    color: "#575279",
+    backgroundColor: "#fffaf3",
+  },
+  styles: [
+    {
+      types: ["comment", "prolog", "doctype", "cdata"],
+      style: { color: "#9893a5", fontStyle: "italic" },
+    },
+    {
+      types: ["string", "attr-value"],
+      style: { color: "#ea9d34" },
+    },
+    {
+      types: ["punctuation", "operator"],
+      style: { color: "#797593" },
+    },
+    {
+      types: [
+        "entity",
+        "url",
+        "symbol",
+        "number",
+        "boolean",
+        "variable",
+        "constant",
+        "property",
+        "regex",
+        "inserted",
+      ],
+      style: { color: "#286983" },
+    },
+    {
+      types: ["atrule", "keyword", "attr-name", "selector"],
+      style: { color: "#286983" },
+    },
+    {
+      types: ["function", "deleted", "tag"],
+      style: { color: "#b4637a" },
+    },
+    {
+      types: ["function-variable"],
+      style: { color: "#907aa9" },
+    },
+    {
+      types: ["tag", "selector", "keyword"],
+      style: { color: "#d7827e" },
+    },
+    {
+      types: ["class-name", "maybe-class-name"],
+      style: { color: "#56949f" },
+    },
+  ],
+};
+
+const rosePineDarkPrismTheme: PrismTheme = {
+  plain: {
+    color: "#e0def4",
+    backgroundColor: "#1f1d2e",
+  },
+  styles: [
+    {
+      types: ["comment", "prolog", "doctype", "cdata"],
+      style: { color: "#6e6a86", fontStyle: "italic" },
+    },
+    {
+      types: ["string", "attr-value"],
+      style: { color: "#f6c177" },
+    },
+    {
+      types: ["punctuation", "operator"],
+      style: { color: "#908caa" },
+    },
+    {
+      types: [
+        "entity",
+        "url",
+        "symbol",
+        "number",
+        "boolean",
+        "variable",
+        "constant",
+        "property",
+        "regex",
+        "inserted",
+      ],
+      style: { color: "#31748f" },
+    },
+    {
+      types: ["atrule", "keyword", "attr-name", "selector"],
+      style: { color: "#31748f" },
+    },
+    {
+      types: ["function", "deleted", "tag"],
+      style: { color: "#eb6f92" },
+    },
+    {
+      types: ["function-variable"],
+      style: { color: "#c4a7e7" },
+    },
+    {
+      types: ["tag", "selector", "keyword"],
+      style: { color: "#ebbcba" },
+    },
+    {
+      types: ["class-name", "maybe-class-name"],
+      style: { color: "#9ccfd8" },
+    },
+  ],
+};
 
 const config: Config = {
   title: "Blogger Gabut",
@@ -11,7 +123,42 @@ const config: Config = {
   baseUrl: process.env.GITHUB_ACTIONS == "true" ? "/blogger-gabut" : "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
-  favicon: "img/favicon.ico",
+  favicon: "favicon.ico",
+  headTags: [
+    {
+      tagName: "link",
+      attributes: {
+        rel: "apple-touch-icon",
+        sizes: "180x180",
+        href: "/apple-touch-icon.png",
+      },
+    },
+    {
+      tagName: "link",
+      attributes: {
+        rel: "icon",
+        type: "image/png",
+        sizes: "32x32",
+        href: "/favicon-32x32.png",
+      },
+    },
+    {
+      tagName: "link",
+      attributes: {
+        rel: "icon",
+        type: "image/png",
+        sizes: "16x16",
+        href: "/favicon-16x16.png",
+      },
+    },
+    {
+      tagName: "link",
+      attributes: {
+        rel: "manifest",
+        href: "/site.webmanifest",
+      },
+    },
+  ],
   organizationName: "crazydw4rf",
   projectName: "blogger-gabut",
   i18n: {
@@ -71,16 +218,11 @@ const config: Config = {
 
   themeConfig: {
     navbar: {
+      hideOnScroll: false,
       title: "Blogger Gabut",
-      // TODO: ganti logo
-      logo: {
-        alt: "My Site Logo",
-        src: "img/logo.png",
-        className: "my-logo",
-      },
       items: [
-        { to: "/blog", label: "Blog", position: "left" },
-        { to: "/tutorial", label: "Tutorial", position: "left" },
+        { to: "/tutorial", label: "/tutorials", position: "left" },
+        { to: "/blog", label: "/blog", position: "left" },
         {
           href: "https://github.com/crazydw4rf/blogger-gabut",
           className: "header-github-link",
@@ -89,50 +231,16 @@ const config: Config = {
         },
       ],
     },
+    colorMode: {
+      defaultMode: "light",
+      respectPrefersColorScheme: false,
+    },
     footer: {
       style: "dark",
-      links: [
-        {
-          title: "Let's connect",
-          items: [
-            {
-              label: "Email",
-              to: "mailto:binarnugroho775@gmail.com",
-            },
-            {
-              label: "Telegram",
-              to: "https://t.me/yuki2048",
-            },
-          ],
-        },
-        {
-          title: "Community",
-          items: [
-            {
-              label: "Discord Server",
-              href: "https://discord.gg/8JZ4JBYqeJ",
-            },
-          ],
-        },
-        {
-          title: "More",
-          items: [
-            {
-              label: "GitHub",
-              href: "https://github.com/crazydw4rf",
-            },
-            {
-              label: "Blog",
-              to: "/blog",
-            },
-          ],
-        },
-      ],
-      copyright: `Copyright © ${new Date().getFullYear()} Blogger Gabut. Built with <a href="https://docusaurus.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">Docusaurus</a>.`,
     },
     prism: {
-      theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
+      theme: rosePineDawnPrismTheme,
+      darkTheme: rosePineDarkPrismTheme,
       additionalLanguages: ["bash", "yaml", "nginx", "apacheconf", "dns-zone-file"],
       magicComments: [
         {
@@ -158,18 +266,13 @@ const config: Config = {
         autoCollapseCategories: false,
       },
     },
-    announcementBar: {
-      id: "announcement_bar",
-      content: "Masih dalam pengembangan",
-      isCloseable: true,
-    },
     mermaid: {
       options: {
         look: "handDrawn",
       },
       theme: {
         dark: "dark",
-        light: "forest",
+        light: "neutral",
       },
     } satisfies MermaidThemeConfig["mermaid"],
   } satisfies Preset.ThemeConfig,

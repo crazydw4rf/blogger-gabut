@@ -1,0 +1,80 @@
+.brandLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none !important;
+  color: var(--rp-text) !important;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  user-select: none;
+  margin-right: 1.5rem;
+}
+
+.brandLink:hover {
+  transform: translateY(-1px);
+}
+
+.promptSymbol {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.825rem;
+  font-weight: 700;
+  color: #286983;
+  background: rgba(40, 105, 131, 0.1);
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  border: 1px solid rgba(40, 105, 131, 0.2);
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+[data-theme="dark"] .promptSymbol {
+  color: #ebbcba;
+  background: rgba(235, 188, 186, 0.12);
+  border-color: rgba(235, 188, 186, 0.25);
+}
+
+.brandLink:hover .promptSymbol {
+  color: #b4637a;
+  border-color: #b4637a;
+  background: rgba(180, 99, 122, 0.15);
+}
+
+[data-theme="dark"] .brandLink:hover .promptSymbol {
+  color: #ebbcba;
+  border-color: #ebbcba;
+  background: rgba(235, 188, 186, 0.22);
+}
+
+.statusDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #56949f;
+  box-shadow: 0 0 0 2px rgba(86, 148, 159, 0.3);
+  display: inline-block;
+  flex-shrink: 0;
+  animation: pulseDot 2.2s infinite;
+}
+
+[data-theme="dark"] .statusDot {
+  background-color: #9ccfd8;
+  box-shadow: 0 0 0 2px rgba(156, 207, 216, 0.3);
+}
+
+@keyframes pulseDot {
+  0% {
+    box-shadow: 0 0 0 0 rgba(86, 148, 159, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 5px rgba(86, 148, 159, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(86, 148, 159, 0);
+  }
+}
+
+.brandText {
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  font-size: 1.15rem;
+  color: var(--rp-text);
+  line-height: 1;
+}
