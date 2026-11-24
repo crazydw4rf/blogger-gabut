@@ -28,33 +28,39 @@ export default function NavbarLayout({ children }: Props): ReactNode {
   const { navbarRef, isNavbarVisible } = useHideableNavbar(hideOnScroll);
 
   return (
-    <nav
-      ref={navbarRef}
-      aria-label={translate({
-        id: "theme.NavBar.navAriaLabel",
-        message: "Main",
-        description: "The ARIA label for the main navigation",
+    <div
+      className={clsx({
+        "navbar-sidebar--show": mobileSidebar.shown,
       })}
-      className={clsx(
-        ThemeClassNames.layout.navbar.container,
-        "navbar",
-        "navbar--fixed-top",
-        styles.customNavbarLayout,
-        hideOnScroll && [
-          styles.navbarHideable,
-          !isNavbarVisible && styles.navbarHidden,
-        ],
-        {
-          "navbar--dark": style === "dark",
-          "navbar--primary": style === "primary",
-          "navbar-sidebar--show": mobileSidebar.shown,
-        }
-      )}
     >
-      <div className={styles.topAccentBar} />
-      {children}
+      <nav
+        ref={navbarRef}
+        aria-label={translate({
+          id: "theme.NavBar.navAriaLabel",
+          message: "Main",
+          description: "The ARIA label for the main navigation",
+        })}
+        className={clsx(
+          ThemeClassNames.layout.navbar.container,
+          "navbar",
+          "navbar--fixed-top",
+          styles.customNavbarLayout,
+          hideOnScroll && [
+            styles.navbarHideable,
+            !isNavbarVisible && styles.navbarHidden,
+          ],
+          {
+            "navbar--dark": style === "dark",
+            "navbar--primary": style === "primary",
+            "navbar-sidebar--show": mobileSidebar.shown,
+          }
+        )}
+      >
+        <div className={styles.topAccentBar} />
+        {children}
+      </nav>
       <NavbarBackdrop onClick={mobileSidebar.toggle} />
       <NavbarMobileSidebar />
-    </nav>
+    </div>
   );
 }
