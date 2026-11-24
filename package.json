@@ -37,7 +37,7 @@
     "@types/react": "^18.3.27",
     "glob": "^11.0.0",
     "replace-in-file": "^8.4.0",
-    "typescript": "^5.9.3"
+    "typescript": "^7.0.2"
   },
   "browserslist": {
     "production": [
