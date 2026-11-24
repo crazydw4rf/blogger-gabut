@@ -221,9 +221,9 @@ const config: Config = {
       hideOnScroll: false,
       title: "Blogger Gabut",
       items: [
-        { to: "/", label: "Portfolio", position: "left", exact: true },
-        { to: "/tutorial", label: "Tutorials", position: "left" },
-        { to: "/blog", label: "Blog", position: "left" },
+        { to: "/", label: "/portfolio", position: "left", exact: true },
+        { to: "/tutorial", label: "/tutorials", position: "left" },
+        { to: "/blog", label: "/blog", position: "left" },
         {
           href: "https://github.com/crazydw4rf/blogger-gabut",
           className: "header-github-link",

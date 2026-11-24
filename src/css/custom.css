@@ -202,11 +202,8 @@ body {
   padding: 0 clamp(1rem, 3.5vw, 3.5rem);
 }
 
-.navbar__title {
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  font-size: 1.15rem;
-  color: var(--rp-text);
+.navbar__brand {
+  margin-right: 1.5rem !important;
 }
 
 .navbar__item {
@@ -217,9 +214,15 @@ body {
 
 .navbar__link {
   border-radius: 4px;
-  padding: 0.4rem 0.85rem;
+  padding: 0.35rem 0.75rem;
   transition: all 0.2s ease;
   color: var(--rp-text);
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
 .navbar__link:hover {
@@ -230,6 +233,65 @@ body {
 [data-theme="dark"] .navbar__link:hover {
   background-color: rgba(235, 188, 186, 0.12);
   color: #ebbcba !important;
+}
+
+.navbar__link--active {
+  color: #286983 !important;
+  background-color: rgba(40, 105, 131, 0.1) !important;
+  font-weight: 700;
+}
+
+[data-theme="dark"] .navbar__link--active {
+  color: #ebbcba !important;
+  background-color: rgba(235, 188, 186, 0.14) !important;
+}
+
+.navbar-sidebar {
+  background-color: #fffaf3 !important;
+  border-right: 1px solid #dfdad9;
+  box-shadow: 0 0 40px rgba(87, 82, 121, 0.15);
+}
+
+[data-theme="dark"] .navbar-sidebar {
+  background-color: #1f1d2e !important;
+  border-right: 1px solid #26233a;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.7);
+}
+
+.navbar-sidebar__brand {
+  border-bottom: 1px solid #dfdad9;
+  background-color: #faf4ed;
+  padding: 0.85rem 1.25rem;
+}
+
+[data-theme="dark"] .navbar-sidebar__brand {
+  border-bottom: 1px solid #26233a;
+  background-color: #191724;
+}
+
+.navbar-sidebar__backdrop {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background-color: rgba(87, 82, 121, 0.3) !important;
+}
+
+[data-theme="dark"] .navbar-sidebar__backdrop {
+  background-color: rgba(25, 23, 36, 0.6) !important;
+}
+
+.navbar__toggle {
+  border-radius: 4px;
+  padding: 0.4rem;
+  transition: all 0.2s ease;
+  color: var(--rp-text);
+}
+
+.navbar__toggle:hover {
+  background-color: rgba(40, 105, 131, 0.08);
+}
+
+[data-theme="dark"] .navbar__toggle:hover {
+  background-color: rgba(235, 188, 186, 0.12);
 }
 
 .footer {

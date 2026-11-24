@@ -80,16 +80,16 @@ export interface PortfolioData {
   contact: {
     heading: string;
     subheading: string;
-    quote: string;
-    location: string;
+    quote?: string;
+    location?: string;
     openForOpportunities: boolean;
-    image: string;
-    email: string;
-    telegramUsername: string;
-    discordUsername: string;
-    githubUsername: string;
-    linkedinUrl: string;
-    instagramUrl: string;
+    image?: string;
+    email?: string;
+    telegramUsername?: string;
+    discordUsername?: string;
+    githubUsername?: string;
+    linkedinUrl?: string;
+    instagramUrl?: string;
     youtubeUrl?: string;
   };
 }
@@ -344,11 +344,8 @@ export const portfolioData: PortfolioData = {
     openForOpportunities: false,
     image: "/img/cat-bg.webp",
     email: "binarnugroho775@gmail.com",
-    telegramUsername: "yuki2048",
-    discordUsername: "crazydw4rf",
     githubUsername: "crazydw4rf",
     linkedinUrl: "https://www.linkedin.com/in/binar-nugroho",
-    instagramUrl: "http://www.instagram.com/binar_nugroho_",
-    youtubeUrl: "https://www.youtube.com/@crazydw4rf",
+    instagramUrl: "http://www.instagram.com/friendly_echidna",
   },
 };
