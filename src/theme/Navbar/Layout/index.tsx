@@ -28,11 +28,7 @@ export default function NavbarLayout({ children }: Props): ReactNode {
   const { navbarRef, isNavbarVisible } = useHideableNavbar(hideOnScroll);
 
   return (
-    <div
-      className={clsx({
-        "navbar-sidebar--show": mobileSidebar.shown,
-      })}
-    >
+    <>
       <nav
         ref={navbarRef}
         aria-label={translate({
@@ -59,8 +55,13 @@ export default function NavbarLayout({ children }: Props): ReactNode {
         <div className={styles.topAccentBar} />
         {children}
       </nav>
-      <NavbarBackdrop onClick={mobileSidebar.toggle} />
+      <NavbarBackdrop
+        className={clsx({
+          "navbar-sidebar--show": mobileSidebar.shown,
+        })}
+        onClick={mobileSidebar.toggle}
+      />
       <NavbarMobileSidebar />
-    </div>
+    </>
   );
 }

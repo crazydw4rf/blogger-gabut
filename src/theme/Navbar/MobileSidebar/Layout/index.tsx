@@ -1,6 +1,7 @@
 import React, { type ReactNode } from "react";
 import clsx from "clsx";
 import { ThemeClassNames } from "@docusaurus/theme-common";
+import { useNavbarMobileSidebar } from "@docusaurus/theme-common/internal";
 import type { Props } from "@theme/Navbar/MobileSidebar/Layout";
 
 export default function NavbarMobileSidebarLayout({
@@ -8,11 +9,16 @@ export default function NavbarMobileSidebarLayout({
   primaryMenu,
   secondaryMenu,
 }: Props): ReactNode {
+  const mobileSidebar = useNavbarMobileSidebar();
+
   return (
     <div
       className={clsx(
         ThemeClassNames.layout.navbar.mobileSidebar.container,
-        "navbar-sidebar"
+        "navbar-sidebar",
+        {
+          "navbar-sidebar--show": mobileSidebar.shown,
+        }
       )}
     >
       {header}

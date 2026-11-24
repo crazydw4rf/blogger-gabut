@@ -297,6 +297,13 @@ body {
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.7);
 }
 
+.navbar-sidebar.navbar-sidebar--show,
+.navbar-sidebar--show .navbar-sidebar {
+  opacity: 1;
+  visibility: visible;
+  transform: translate3d(0, 0, 0);
+}
+
 .navbar-sidebar__items {
   display: block !important;
   flex: 1 1 auto;
@@ -342,6 +349,13 @@ body {
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   background-color: rgba(87, 82, 121, 0.3) !important;
+}
+
+.navbar-sidebar__backdrop.navbar-sidebar--show,
+.navbar-sidebar--show .navbar-sidebar__backdrop {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 [data-theme="dark"] .navbar-sidebar__backdrop {
