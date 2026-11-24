@@ -6,7 +6,6 @@ tags: [realmd, domain, sssd, debian, linux]
 ---
 
 import CodeBlock from '@theme/CodeBlock'
-import Mermaid from '@theme/Mermaid'
 import v from "./variables"
 
 # Instalasi dan konfigurasi dasar
@@ -19,21 +18,7 @@ realmd adalah sebuah layanan yang digunakan untuk mempermudah proses penggabunga
 
 Berikut topologi yang akan digunakan pada tutorial ini.
 
-<Mermaid value={`---
-title: Topologi
----
-%%{init:{'flowchart':{'rankSpacing': 100},'themeVariables': {'fontSize':'24px'}}}%%
-flowchart LR 
-  dc1("<br>${v.DC_1_HOSTNAME}<br><br>${v.DC_1_HOST+"<br>".repeat(4)+v.DC_1_OS}") <===>
-  r1(("Router")):::nethw1 <===>
-  c1("<br>${v.SERVER_1_HOSTNAME}<br><br>${v.SERVER_1_HOST+"<br>".repeat(4)+v.SERVER_1_OS}")
-
-  dc1:::comp1    
-  c1:::comp1
-
-  classDef comp1 padding: 120px
-  classDef nethw1 padding: 100px
-`}></Mermaid>
+![topology](./img/realmd-ad-topology.svg)
 
 
 ## Instalasi dan konfigurasi dasar

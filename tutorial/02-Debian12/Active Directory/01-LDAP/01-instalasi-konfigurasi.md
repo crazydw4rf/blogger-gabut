@@ -30,7 +30,7 @@ sudo apt install slapd ldap-utils -y
 Setelah proses instalasi paket aplikasi yang dibutuhkan selesai maka akan muncul tampilan seperti gambar berikut untuk memasukan
 kata sandi administrator.
 
-![slapd input admin password](./img/ss-slapd-input-admin-password.png)
+![slapd input admin password](./img/ss-slapd-input-admin-password.webp)
 
 Masukan kata sandi administrator dan konfirmasi ulang, setelah itu jalankan perintah berikut untuk mengatur nama domain dan nama organisasi dari LDAP server.
 
@@ -40,25 +40,25 @@ sudo dpkg-reconfigure slapd
 
 Setelah menjalankan perintah diatas maka akan muncul tampilan seperti gambar berikut pada terminal, pilih **No** untuk melanjutkan.
 
-![slapd ask to omit configuration](./img/ss-slapd-confirm-omit.png)
+![slapd ask to omit configuration](./img/ss-slapd-confirm-omit.webp)
 
 Selanjutnya sesuaikan nama domain dan nama organisasi.
 
-![slapd input domain name](./img/ss-slapd-input-dns.png)
-![slapd input organization name](./img/ss-slapd-input-organization-name.png)
+![slapd input domain name](./img/ss-slapd-input-dns.webp)
+![slapd input organization name](./img/ss-slapd-input-organization-name.webp)
 
 Kemudian buat kata sandi admin baru. Kata sandi ini akan digunakan ketika melakukan perubahan pada ldap server seperti membuat pengguna atau unit organisasi baru.
 
-![slapd input admin password](./img/ss-slapd-input-admin-password.png)
-![slapd confirm admin password](./img/ss-slapd-input-confirm-admin-password.png)
+![slapd input admin password](./img/ss-slapd-input-admin-password.webp)
+![slapd confirm admin password](./img/ss-slapd-input-confirm-admin-password.webp)
 
 Pilih **No**.
 
-![slapd confirm remove database when slapd is purged](./img/ss-slapd-confirm-db-remove.png)
+![slapd confirm remove database when slapd is purged](./img/ss-slapd-confirm-db-remove.webp)
 
 Pilih **Yes**
 
-![slapd confirm move old database](./img/ss-slapd-confirm-move-old-db.png)
+![slapd confirm move old database](./img/ss-slapd-confirm-move-old-db.webp)
 
 ## Konfigurasi Lanjutan
 

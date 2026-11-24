@@ -5,7 +5,6 @@ description: Tutorial instalasi dan konfigurasi iptables firewall pada Linux Deb
 tags: [iptables, firewall, security, rules, network, linux, debian]
 ---
 
-import Mermaid from "@theme/Mermaid"
 import CodeBlock from "@theme/CodeBlock"
 import v from "../variables"
 
@@ -19,21 +18,7 @@ import v from "../variables"
 
 Berikut topologi yang akan digunakan pada tutorial ini.
 
-<Mermaid value={`---
-title: Topologi
----
-%%{init:{'flowchart':{'rankSpacing': 100},'themeVariables': {'fontSize':'24px'}}}%%
-flowchart LR 
-  s1("<br>${v.SERVER_1_NAME}<br><br>${v.SERVER_1_ADDR+v.SERVER_CIDR+"<br>".repeat(4)+v.SERVER_1_OS}") <===>
-  r1(("Router")):::nethw1 <===>
-  c1("<br>${v.CLIENT_1_NAME}<br><br>${v.CLIENT_1_ADDR+v.CLIENT_CIDR+"<br>".repeat(4)+v.CLIENT_1_OS}")
-
-  s1:::comp1    
-  c1:::comp1
-
-  classDef comp1 padding: 120px
-  classDef nethw1 padding: 100px
-`}/>
+![topology](./img/iptables-topology.svg)
 
 ## Instalasi dan konfigurasi
 
@@ -92,7 +77,7 @@ nilai CIDR 32 pada alamat IP client menunjukkan bahwa alamat IP tersebut adalah 
 
 Perintah di atas adalah untuk menambahkan rule dengan chain INPUT atau paket yang menuju ke server, dengan protokol ICMP atau ping, alamat IP sumber adalah alamat IP dari client, dan aksi yang dilakukan adalah DROP atau menolak paket.
 
-![screenshot block ping](./img/ss-block-ping.png)
+![screenshot block ping](./img/ss-block-ping.webp)
 
 #### Rule 2: Memblokir koneksi HTTP
 
@@ -112,7 +97,7 @@ sudo iptables -A INPUT -p tcp --dport http -s ${v.CLIENT_1_ADDR+v.HOST_CIDR} -j 
 `}
 </CodeBlock>
 
-![screenshot block http](./img/ss-block-http.png)
+![screenshot block http](./img/ss-block-http.webp)
 
 #### Rule 3: Mengizinkan dan memblokir koneksi SSH
 
@@ -122,7 +107,7 @@ Mengizinkan koneksi SSH dari client ke server.
 {`sudo iptables -A INPUT -p tcp --dport 22 -s ${v.CLIENT_1_ADDR+v.HOST_CIDR} -j ACCEPT`}
 </CodeBlock>
 
-![screenshot block ssh](./img/ss-block-ssh-accept.png)
+![screenshot block ssh](./img/ss-block-ssh-accept.webp)
 
 Memblokir koneksi SSH dari client ke server.
 
@@ -139,7 +124,7 @@ sudo iptables -A OUTPUT -p tcp --sport 22 -d ${v.CLIENT_1_ADDR+v.HOST_CIDR} -j D
 `}
 </CodeBlock>
 
-![screenshot block ssh](./img/ss-block-ssh-drop.png)
+![screenshot block ssh](./img/ss-block-ssh-drop.webp)
 
 #### Rule 4: Log ping
 
@@ -159,7 +144,7 @@ Untuk menampilkan log dari iptables, jalankan perintah berikut.
 {`cat /var/log/kern.log | grep "ping"`}
 </CodeBlock>
 
-![screenshot log ping](./img/ss-log-ping.png)
+![screenshot log ping](./img/ss-log-ping.webp)
 
 :::note
 jika berkas /var/log/kern.log tidak ditemukan, dapat menginstal paket aplikasi `rsyslog` dengan menjalankan perintah `sudo apt install rsyslog -y`.

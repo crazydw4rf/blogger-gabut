@@ -6,7 +6,6 @@ tags: [web, apache2, apache, virtual host, linux, debian]
 ---
 
 import CodeBlock from "@theme/CodeBlock"
-import Mermaid from "@theme/Mermaid"
 import v from "../variables"
 
 # Instalasi dan konfigurasi dasar
@@ -19,21 +18,7 @@ import v from "../variables"
 
 Topologi yang akan digunakan pada tutorial ini adalah sebagai berikut.
 
-<Mermaid value={`---
-title: Topologi
----
-%%{init:{'flowchart':{'rankSpacing': 100},'themeVariables': {'fontSize':'24px'}}}%%
-flowchart LR 
-  s1("<br>${v.SERVER_1_HOSTNAME}<br><br>${v.SERVER_1_HOST+"<br>".repeat(4)+v.SERVER_1_OS}") <===>
-  r1(("Router")):::nethw1 <===>
-  c1("<br>${v.CLIENT_1_HOSTNAME}<br><br>${v.CLIENT_1_HOST+"<br>".repeat(4)+v.CLIENT_1_OS}")
-
-  s1:::comp1    
-  c1:::comp1
-
-  classDef comp1 padding: 120px
-  classDef nethw1 padding: 100px
-`}></Mermaid>
+![topology](./img/web-service-apache-topology.svg)
 
 ## Instalasi paket aplikasi
 
@@ -122,6 +107,6 @@ Selanjutnya modfikasi dan isi berkas html tersebut. Contohnya sebagai berikut.
 
 Buka aplikasi _browser_ pada komputer klien <code>{v.CLIENT_1_HOSTNAME}</code> dan masukan nama domain atau alamat IP dari komputer server <code>{v.SERVER_1_HOSTNAME}</code>.
 
-![testing web server - client browser](./img/ss-client-browser-test.png)
+![testing web server - client browser](./img/ss-client-browser-test.webp)
 
 Sekian tutorial kali ini, materi atau tutorial selanjutnya adalah cara menkonfigurasi koneksi aman dengan SSL dan protokol HTTPS.
