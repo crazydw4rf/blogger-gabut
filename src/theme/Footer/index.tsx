@@ -1,11 +1,7 @@
 import React, { type ReactNode } from "react";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { Mail, MapPin } from "lucide-react";
-import {
-  GithubIcon,
-  LinkedInIcon,
-  DiscordIcon,
-} from "../../components/icons/SocialIcons";
+import { GithubIcon, LinkedInIcon, DiscordIcon } from "../../components/icons/SocialIcons";
 import { footerData, type SocialLink } from "../../data/footerData";
 import styles from "./footer.module.css";
 
@@ -116,9 +112,9 @@ function Footer(): ReactNode {
 
         <div className={styles.footerBottomStrip}>
           <p className={styles.copyrightText}>
-            © {new Date().getFullYear()} Built with{" "}
+            © {new Date().getFullYear()} <strong>Blogger Gabut</strong>. Built with{" "}
             <a href="https://docusaurus.io/" target="_blank">
-              <strong>Docusaurus</strong>
+              Docusaurus
             </a>
           </p>
         </div>
