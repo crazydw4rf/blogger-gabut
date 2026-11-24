@@ -42,6 +42,8 @@
 
   --ifm-code-font-size: 95%;
   --ifm-global-radius: 4px;
+
+  --ifm-navbar-search-input-icon: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23575279' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'><circle cx='11.5' cy='11.5' r='7.2'/><path d='m20.5 20.5-4-4'/></svg>");
 }
 
 [data-theme="dark"] {
@@ -85,4 +87,6 @@
   --ifm-hr-border-color: var(--rp-highlight-med);
 
   --docusaurus-highlighted-code-line-bg: rgba(235, 188, 186, 0.15);
+
+  --ifm-navbar-search-input-icon: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23e0def4' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'><circle cx='11.5' cy='11.5' r='7.2'/><path d='m20.5 20.5-4-4'/></svg>");
 }
