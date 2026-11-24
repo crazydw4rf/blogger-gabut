@@ -60,7 +60,7 @@ const CAT_TRAIL: CatWaypointItem[] = [
     name: "Night Patrol",
     purrText: "tap tap meow ♪",
     component: CatWalking,
-    outline: true,
+    outline: false,
     alignClass: "alignCenterRight",
     enterFrom: "enterRight",
     width: 270,
@@ -96,7 +96,7 @@ const CAT_TRAIL: CatWaypointItem[] = [
     name: "Tangled Yarn",
     purrText: "nyan! keep rolling ♪",
     component: CatYarn,
-    outline: true,
+    outline: false,
     alignClass: "alignRight",
     enterFrom: "enterRight",
     width: 270,
@@ -120,7 +120,7 @@ const CAT_TRAIL: CatWaypointItem[] = [
     name: "Curious Kitty",
     purrText: "meow? need a hand?",
     component: CatSitting,
-    outline: true,
+    outline: false,
     alignClass: "alignRight",
     enterFrom: "enterRight",
     width: 225,
@@ -172,7 +172,7 @@ function Waypoint({ item, isLast }: WaypointProps): JSX.Element {
       {
         rootMargin: "0px 0px -80px 0px",
         threshold: 0.12,
-      }
+      },
     );
 
     observer.observe(el);
@@ -204,11 +204,7 @@ function Waypoint({ item, isLast }: WaypointProps): JSX.Element {
     <section
       id={`cat-${item.id}`}
       ref={elementRef}
-      className={clsx(
-        styles.catWaypoint,
-        styles[item.alignClass],
-        visible && styles.waypointVisible
-      )}
+      className={clsx(styles.catWaypoint, styles[item.alignClass], visible && styles.waypointVisible)}
     >
       <div className={clsx(styles.catStage, styles[item.enterFrom])}>
         <button
@@ -223,37 +219,24 @@ function Waypoint({ item, isLast }: WaypointProps): JSX.Element {
             </span>
           )}
           <span className={styles.catSpotlight} aria-hidden="true" />
-          <CatComponent
-            outline={item.outline}
-            width={item.width}
-            height={item.height}
-            className={styles.catItem}
-          />
+          <CatComponent outline={item.outline} width={item.width} height={item.height} className={styles.catItem} />
           <span className={styles.groundShadow} aria-hidden="true" />
         </button>
       </div>
 
       {!isLast && (
-        <div
-          className={clsx(styles.pawConnector, styles[item.pawDirection])}
-          aria-hidden="true"
-        >
+        <div className={clsx(styles.pawConnector, styles[item.pawDirection])} aria-hidden="true">
           {[0, 1, 2, 3].map((step) => {
-            const baseAngle =
-              item.pawDirection === "toRight"
-                ? 145
-                : item.pawDirection === "toLeft"
-                ? 215
-                : 180;
+            const baseAngle = item.pawDirection === "toRight" ? 145 : item.pawDirection === "toLeft" ? 215 : 180;
             const wiggle = step % 2 === 0 ? -12 : 12;
             const swayX =
               item.pawDirection === "toRight"
                 ? step * 28
                 : item.pawDirection === "toLeft"
-                ? -step * 28
-                : step % 2 === 0
-                ? -10
-                : 10;
+                  ? -step * 28
+                  : step % 2 === 0
+                    ? -10
+                    : 10;
 
             return (
               <span
@@ -264,11 +247,7 @@ function Waypoint({ item, isLast }: WaypointProps): JSX.Element {
                   transform: `translate(${swayX}px, ${step * 24}px)`,
                 }}
               >
-                <PawPrint
-                  size={20}
-                  rotation={baseAngle + wiggle}
-                  opacity={0.32 + step * 0.08}
-                />
+                <PawPrint size={20} rotation={baseAngle + wiggle} opacity={0.32 + step * 0.08} />
               </span>
             );
           })}
@@ -300,11 +279,7 @@ export default function Home(): JSX.Element {
 
       <main className={styles.catsMain}>
         {CAT_TRAIL.map((item, idx) => (
-          <Waypoint
-            key={item.id}
-            item={item}
-            isLast={idx === CAT_TRAIL.length - 1}
-          />
+          <Waypoint key={item.id} item={item} isLast={idx === CAT_TRAIL.length - 1} />
         ))}
       </main>
     </Layout>
