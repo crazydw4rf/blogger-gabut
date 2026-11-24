@@ -12,7 +12,7 @@
         "@easyops-cn/docusaurus-search-local": "^0.52.2",
         "@mdx-js/react": "^3.1.1",
         "clsx": "^2.1.1",
-        "docusaurus-plugin-image-zoom": "^2.0.0",
+        "docusaurus-plugin-image-zoom": "^3.0.1",
         "lucide-react": "^1.48.0",
         "prism-react-renderer": "^2.4.1",
         "react": "^18.3.1",
@@ -1262,7 +1262,7 @@
 
     "dns-packet": ["dns-packet@5.6.1", "", { "dependencies": { "@leichtgewicht/ip-codec": "2.0.5" } }, "sha512-l4gcSouhcgIKRvyy99RNVOgxXiicE+2jZoNmaNmZ6JXiGajBOJAesk1OBlJuM5k2c+eudGdLxDqXuPCKIj6kpw=="],
 
-    "docusaurus-plugin-image-zoom": ["docusaurus-plugin-image-zoom@2.0.0", "", { "dependencies": { "medium-zoom": "1.1.0", "validate-peer-dependencies": "2.2.0" }, "peerDependencies": { "@docusaurus/theme-classic": "3.6.3" } }, "sha512-TWHQZeoiged+95CESlZk++lihzl3pqw34n0/fbexx2AocmFhbo9K2scYDgYB8amki4/X6mUCLTPZE1pQvT+00Q=="],
+    "docusaurus-plugin-image-zoom": ["docusaurus-plugin-image-zoom@3.0.1", "", { "dependencies": { "medium-zoom": "^1.1.0", "validate-peer-dependencies": "^2.2.0" }, "peerDependencies": { "@docusaurus/theme-classic": ">=3.0.0" } }, "sha512-mQrqA99VpoMQJNbi02qkWAMVNC4+kwc6zLLMNzraHAJlwn+HrlUmZSEDcTwgn+H4herYNxHKxveE2WsYy73eGw=="],
 
     "dom-converter": ["dom-converter@0.2.0", "", { "dependencies": { "utila": "0.4.0" } }, "sha512-gd3ypIPfOMr9h5jIKq8E3sHOTCjeirnl0WK5ZdS1AW0Odt0b1PaWaHdJ4Qk4klv+YB9aJBS7mESXjFoDQPu6DA=="],
 
