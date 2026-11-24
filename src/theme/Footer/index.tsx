@@ -2,6 +2,7 @@ import React, { type ReactNode } from "react";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { Mail, MapPin } from "lucide-react";
 import { GithubIcon, LinkedInIcon, DiscordIcon } from "../../components/icons/SocialIcons";
+import { CatPeeking } from "../../components/Cats";
 import { footerData, type SocialLink } from "../../data/footerData";
 import styles from "./footer.module.css";
 
@@ -25,6 +26,9 @@ function Footer(): ReactNode {
 
   return (
     <footer id="contact" className={styles.customFooter}>
+      <div className={styles.footerPeekingCat} aria-hidden="true">
+        <CatPeeking width={115} height={86} />
+      </div>
       <div className={styles.footerContainer}>
         <div className={styles.footerMainGrid}>
           <div className={styles.connectColumn}>

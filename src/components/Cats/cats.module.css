@@ -1,0 +1,335 @@
+.catVector {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.catVector:hover {
+  transform: translateY(-4px) scale(1.03);
+}
+
+.catBody {
+  fill: var(--rp-surface, #fffaf3);
+  stroke: var(--rp-text, #575279);
+  stroke-width: 3.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: fill 0.25s ease, stroke 0.25s ease;
+}
+
+[data-theme="dark"] .catBody {
+  fill: var(--rp-surface, #1f1d2e);
+  stroke: var(--rp-text, #e0def4);
+}
+
+.catLine {
+  stroke: var(--rp-text, #575279);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  fill: none;
+  transition: stroke 0.25s ease;
+}
+
+[data-theme="dark"] .catLine {
+  stroke: var(--rp-text, #e0def4);
+}
+
+.catWhisker {
+  stroke: var(--rp-subtle, #797593);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  transition: stroke 0.25s ease;
+}
+
+[data-theme="dark"] .catWhisker {
+  stroke: var(--rp-subtle, #908caa);
+}
+
+.catEarInner {
+  fill: var(--rp-rose, #d7827e);
+  opacity: 0.65;
+  transition: fill 0.25s ease;
+}
+
+[data-theme="dark"] .catEarInner {
+  fill: var(--rp-rose, #ebbcba);
+}
+
+.catPatchRose {
+  fill: var(--rp-rose, #d7827e);
+  opacity: 0.85;
+}
+
+[data-theme="dark"] .catPatchRose {
+  fill: var(--rp-rose, #ebbcba);
+}
+
+.catPatchGold {
+  fill: var(--rp-gold, #ea9d34);
+  opacity: 0.85;
+}
+
+[data-theme="dark"] .catPatchGold {
+  fill: var(--rp-gold, #f6c177);
+}
+
+.catPatchPine {
+  fill: var(--rp-pine, #286983);
+  opacity: 0.85;
+}
+
+[data-theme="dark"] .catPatchPine {
+  fill: var(--rp-pine, #31748f);
+}
+
+.catPatchIris {
+  fill: var(--rp-iris, #907aa9);
+  opacity: 0.85;
+}
+
+[data-theme="dark"] .catPatchIris {
+  fill: var(--rp-iris, #c4a7e7);
+}
+
+.catNose {
+  fill: var(--rp-love, #b4637a);
+}
+
+[data-theme="dark"] .catNose {
+  fill: var(--rp-love, #eb6f92);
+}
+
+.catEye {
+  fill: var(--rp-pine, #286983);
+}
+
+[data-theme="dark"] .catEye {
+  fill: var(--rp-foam, #9ccfd8);
+}
+
+.catEyeLove {
+  fill: var(--rp-love, #b4637a);
+}
+
+[data-theme="dark"] .catEyeLove {
+  fill: var(--rp-love, #eb6f92);
+}
+
+.catOutline .catBody {
+  fill: none;
+}
+
+.catOutline .catPatchRose,
+.catOutline .catPatchGold,
+.catOutline .catPatchPine,
+.catOutline .catPatchIris {
+  fill: none;
+  stroke: var(--rp-subtle, #797593);
+  stroke-width: 1.8;
+  stroke-dasharray: 4 3;
+}
+
+.catOutline .catEarInner {
+  fill: none;
+  stroke: var(--rp-rose, #d7827e);
+  stroke-width: 1.8;
+}
+
+@keyframes sleepBreathe {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.025, 0.98);
+  }
+}
+
+@keyframes tailSwish {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(4deg);
+  }
+}
+
+@keyframes zzzFloat {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) scale(0.8);
+  }
+  50% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(12px, -22px) scale(1.1);
+  }
+}
+
+@keyframes stretchTail {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-8deg);
+  }
+}
+
+@keyframes loafTail {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: rotate(2deg) scale(1.02);
+  }
+}
+
+@keyframes batPaw {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  40% {
+    transform: rotate(-15deg);
+  }
+  60% {
+    transform: rotate(8deg);
+  }
+}
+
+@keyframes flutter {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(6px, -10px) rotate(10deg);
+  }
+}
+
+@keyframes walkTail {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+}
+
+@keyframes pawWiggle {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+}
+
+@keyframes drapeTail {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-6deg);
+  }
+}
+
+@keyframes earTwitchL {
+  0%, 90%, 100% {
+    transform: rotate(0deg);
+  }
+  93% {
+    transform: rotate(-7deg);
+  }
+  96% {
+    transform: rotate(3deg);
+  }
+}
+
+@keyframes earTwitchR {
+  0%, 88%, 100% {
+    transform: rotate(0deg);
+  }
+  91% {
+    transform: rotate(7deg);
+  }
+  95% {
+    transform: rotate(-3deg);
+  }
+}
+
+@keyframes catBlink {
+  0%, 93%, 97%, 100% {
+    transform: scaleY(1);
+  }
+  95% {
+    transform: scaleY(0.1);
+  }
+}
+
+.animSleepBreathe {
+  animation: sleepBreathe 4s ease-in-out infinite;
+  transform-origin: 100px 95px;
+}
+
+.animTailSwish {
+  animation: tailSwish 4s ease-in-out infinite;
+  transform-origin: 160px 105px;
+}
+
+.animZzz {
+  fill: var(--rp-iris, #907aa9);
+  font-family: var(--ifm-font-family-monospace);
+  font-weight: bold;
+  animation: zzzFloat 3s ease-in-out infinite;
+}
+
+.animStretchTail {
+  animation: stretchTail 3.5s ease-in-out infinite;
+  transform-origin: 205px 65px;
+}
+
+.animLoafTail {
+  animation: loafTail 3s ease-in-out infinite;
+  transform-origin: 155px 115px;
+}
+
+.animEarTwitchL {
+  animation: earTwitchL 4.5s ease-in-out infinite;
+  transform-origin: 36px 45px;
+}
+
+.animEarTwitchR {
+  animation: earTwitchR 5s ease-in-out infinite 0.7s;
+}
+
+.animBlink {
+  animation: catBlink 4s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.animBatPaw {
+  animation: batPaw 2.5s ease-in-out infinite;
+  transform-origin: 95px 105px;
+}
+
+.animFlutter {
+  animation: flutter 3s ease-in-out infinite;
+  transform-origin: 120px 30px;
+}
+
+.animWalkTail {
+  animation: walkTail 3.5s ease-in-out infinite;
+  transform-origin: 38px 90px;
+}
+
+.animPawWiggle {
+  animation: pawWiggle 2.5s ease-in-out infinite;
+  transform-origin: 105px 75px;
+}
+
+.animDrapeTail {
+  animation: drapeTail 4s ease-in-out infinite;
+  transform-origin: 125px 180px;
+}

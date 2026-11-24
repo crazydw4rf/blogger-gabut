@@ -1,10 +1,5 @@
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
-
 .heroBanner {
-  padding: 4rem 0;
+  padding: 4.5rem 0 3.5rem;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -12,12 +7,124 @@
 
 @media screen and (max-width: 996px) {
   .heroBanner {
-    padding: 2rem;
+    padding: 3rem 1.5rem 2rem;
   }
 }
 
-.buttons {
+.catsMain {
+  position: relative;
+  width: 100%;
+  padding: 4rem 1.5rem 6rem;
+  overflow-x: clip;
   display: flex;
+  flex-direction: column;
+}
+
+.catWaypoint {
+  display: flex;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto clamp(140px, 16vh, 250px);
+  position: relative;
+}
+
+.catWaypoint:last-child {
+  margin-bottom: 2rem;
+}
+
+.alignLeft {
+  justify-content: flex-start;
+  padding-left: clamp(1rem, 6vw, 8rem);
+}
+
+.alignRight {
+  justify-content: flex-end;
+  padding-right: clamp(1rem, 6vw, 8rem);
+}
+
+.alignCenter {
+  justify-content: center;
+}
+
+.alignCenterLeft {
+  justify-content: center;
+  padding-right: clamp(1rem, 14vw, 15rem);
+}
+
+.alignCenterRight {
+  justify-content: center;
+  padding-left: clamp(1rem, 14vw, 15rem);
+}
+
+.catWrapper {
+  position: relative;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  opacity: 0;
+  transform: translateY(40px) scale(0.92);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.waypointVisible .catWrapper {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.catItem {
+  width: clamp(160px, 26vw, 250px);
+  height: auto;
+  max-width: 85vw;
+}
+
+.pawTrail {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  gap: 16px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.8s ease 0.25s;
+  color: var(--rp-subtle, #797593);
+}
+
+.waypointVisible .pawTrail {
+  opacity: 0.35;
+}
+
+[data-theme="dark"] .pawTrail {
+  color: var(--rp-subtle, #908caa);
+}
+
+@media (max-width: 640px) {
+  .catWaypoint {
+    margin-bottom: 110px;
+  }
+
+  .alignLeft,
+  .alignRight,
+  .alignCenterLeft,
+  .alignCenterRight {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .catItem {
+    width: clamp(140px, 46vw, 210px);
+  }
+
+  .pawTrail {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .catWrapper {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }

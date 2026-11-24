@@ -1,0 +1,10 @@
+export { default as CatPeeking } from "./CatPeeking";
+export { default as CatSleeping } from "./CatSleeping";
+export { default as CatStretching } from "./CatStretching";
+export { default as CatLoaf } from "./CatLoaf";
+export { default as CatPlaying } from "./CatPlaying";
+export { default as CatWalking } from "./CatWalking";
+export { default as CatRolling } from "./CatRolling";
+export { default as CatSitting } from "./CatSitting";
+export { default as PawPrint } from "./PawPrint";
+export * from "./types";
