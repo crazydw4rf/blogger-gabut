@@ -27,7 +27,7 @@ function Footer(): ReactNode {
   return (
     <footer id="contact" className={styles.customFooter}>
       <div className={styles.footerPeekingCat} aria-hidden="true">
-        <CatPeeking width={115} height={86} />
+        <CatPeeking width={160} height={160} className={styles.footerPeekingSvg} />
       </div>
       <div className={styles.footerContainer}>
         <div className={styles.footerMainGrid}>

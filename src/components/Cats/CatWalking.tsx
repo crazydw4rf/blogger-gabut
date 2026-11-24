@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useId } from "react";
 import clsx from "clsx";
 import type { CatProps } from "./types";
 import styles from "./cats.module.css";
@@ -10,6 +10,8 @@ export default function CatWalking({
   width = 220,
   height = 160,
 }: CatProps): JSX.Element {
+  const bodyClipId = useId();
+
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -20,43 +22,80 @@ export default function CatWalking({
       className={clsx(styles.catVector, outline && styles.catOutline, className)}
       aria-hidden="true"
     >
-      <path
-        d="M 42 90 C 22 75 12 45 28 22 C 40 8 56 16 48 34 C 40 48 44 72 55 88"
-        className={clsx(styles.catBody, styles.animWalkTail)}
-      />
+      <defs>
+        <clipPath id={bodyClipId}>
+          <path d="M 48 84 C 66 72 114 70 150 78 C 166 82 172 94 168 106 C 162 118 144 120 112 118 C 78 116 54 116 44 104 C 38 96 41 88 48 84 Z" />
+        </clipPath>
+      </defs>
 
-      <path d="M 74 110 L 68 148 L 78 148 L 88 120" className={styles.catBody} />
-      <path d="M 160 110 L 172 144 L 182 144 L 176 112" className={styles.catBody} />
+      <g className={styles.animWalkTail} style={{ transformOrigin: "48px 86px" }}>
+        <path
+          d="M 48 88 C 30 78 18 52 26 28 C 32 12 48 14 48 26 C 48 34 38 36 37 28 C 36 22 30 28 32 46 C 34 62 44 76 54 84"
+          className={styles.catBody}
+        />
+      </g>
+
+      <g className={styles.animWalkStepB} style={{ transformOrigin: "68px 106px" }}>
+        <path
+          d="M 62 104 L 74 138 C 76 144 84 145 86 141 C 88 138 83 134 80 132 L 72 104 Z"
+          className={styles.catBodyMuted}
+        />
+      </g>
+      <g className={styles.animWalkStepA} style={{ transformOrigin: "152px 106px" }}>
+        <path
+          d="M 146 106 L 158 138 C 160 144 168 145 170 141 C 172 138 167 134 164 132 L 156 104 Z"
+          className={styles.catBodyMuted}
+        />
+      </g>
 
       <path
-        d="M 45 86 C 60 72 110 68 150 76 C 172 80 182 92 184 102 C 180 115 168 122 148 122 C 110 122 72 120 48 110 C 38 102 38 94 45 86 Z"
+        d="M 48 84 C 66 72 114 70 150 78 C 166 82 172 94 168 106 C 162 118 144 120 112 118 C 78 116 54 116 44 104 C 38 96 41 88 48 84 Z"
         className={styles.catBody}
       />
+
+      <g clipPath={`url(#${bodyClipId})`}>
+        <path d="M 84 70 C 106 68 128 74 132 92 C 112 94 94 86 84 70 Z" className={styles.catPatchRose} />
+        <path d="M 52 80 C 68 74 78 82 74 96 C 62 96 54 88 52 80 Z" className={styles.catPatchGold} />
+      </g>
+
       <path
-        d="M 85 72 C 105 68 130 72 135 88 C 115 88 98 82 85 72 Z"
-        className={styles.catPatchRose}
-      />
-      <path
-        d="M 60 82 C 72 78 80 82 78 95 C 68 94 62 88 60 82 Z"
-        className={styles.catPatchGold}
+        d="M 48 84 C 66 72 114 70 150 78 C 166 82 172 94 168 106 C 162 118 144 120 112 118 C 78 116 54 116 44 104 C 38 96 41 88 48 84 Z"
+        className={styles.catStrokeOnly}
       />
 
-      <path d="M 54 102 L 45 142 L 56 142 L 68 112" className={styles.catBody} />
-      <path d="M 142 108 L 134 146 L 145 146 L 155 110" className={styles.catBody} />
+      <g className={styles.animWalkStepA} style={{ transformOrigin: "56px 104px" }}>
+        <path
+          d="M 50 98 C 46 112 46 126 42 138 C 40 144 48 146 53 144 C 56 142 54 136 56 126 L 64 106"
+          className={styles.catBody}
+        />
+      </g>
+      <g className={styles.animWalkStepB} style={{ transformOrigin: "142px 106px" }}>
+        <path
+          d="M 136 106 L 130 138 C 129 144 137 146 142 144 C 145 142 143 136 144 128 L 148 108"
+          className={styles.catBody}
+        />
+      </g>
 
       <g>
-        <path d="M 168 62 L 175 32 Q 190 40 192 60 Z" className={styles.catBody} />
-        <path d="M 172 58 L 178 40 Q 188 46 188 58 Z" className={styles.catEarInner} />
-        <path d="M 196 62 L 214 38 Q 218 56 208 70 Z" className={styles.catBody} />
-        <path d="M 198 62 L 210 46 Q 214 58 206 66 Z" className={styles.catEarInner} />
+        <path d="M 176 54 L 188 30 Q 196 42 190 58 Z" className={styles.catBody} />
+        <path d="M 179 53 L 187 37 Q 192 44 188 55 Z" className={styles.catEarInner} />
 
-        <circle cx="188" cy="75" r="24" className={styles.catBody} />
-        <ellipse cx="194" cy="70" rx="5.5" ry="7" className={styles.catEye} />
-        <circle cx="196" cy="68" r="2" fill="#ffffff" />
+        <g className={styles.animEarTwitchL} style={{ transformOrigin: "163px 56px" }}>
+          <path d="M 154 62 L 154 28 Q 170 36 172 56 Z" className={styles.catBody} />
+          <path d="M 157 57 L 157 37 Q 167 42 168 54 Z" className={styles.catEarInner} />
+        </g>
 
-        <polygon points="208,78 212,78 210,81" className={styles.catNose} />
-        <path d="M 210 81 Q 206 85 201 83" className={styles.catLine} strokeWidth="1.8" />
-        <path d="M 204 78 L 222 75 M 204 83 L 220 86" className={styles.catWhisker} />
+        <ellipse cx="174" cy="72" rx="24" ry="21" className={styles.catBody} />
+        <ellipse cx="182" cy="78" rx="4" ry="2.5" className={styles.catBlush} />
+
+        <g className={styles.animBlink}>
+          <ellipse cx="182" cy="68" rx="4.5" ry="5.8" className={styles.catEye} />
+          <circle cx="183.5" cy="66" r="1.8" fill="#ffffff" />
+        </g>
+
+        <polygon points="193,74 198,74 196,77.5" className={styles.catNose} />
+        <path d="M 196 77.5 Q 192 82 187 80" className={styles.catLine} />
+        <path d="M 192 77 L 212 74 M 192 81 L 210 84" className={styles.catWhisker} />
       </g>
     </svg>
   );

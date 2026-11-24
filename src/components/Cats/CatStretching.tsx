@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useId } from "react";
 import clsx from "clsx";
 import type { CatProps } from "./types";
 import styles from "./cats.module.css";
@@ -8,52 +8,78 @@ export default function CatStretching({
   outline,
   style,
   width = 240,
-  height = 140,
+  height = 145,
 }: CatProps): JSX.Element {
+  const bodyClipId = useId();
+
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 240 140"
+      viewBox="0 0 240 145"
       width={width}
       height={height}
       style={style}
       className={clsx(styles.catVector, outline && styles.catOutline, className)}
       aria-hidden="true"
     >
-      <g className={styles.animStretchTail}>
+      <defs>
+        <clipPath id={bodyClipId}>
+          <path d="M 188 66 C 172 54 146 66 122 86 C 102 102 84 106 70 108 L 70 124 C 94 124 118 118 142 104 C 154 96 164 102 168 114 L 188 114 C 194 98 196 74 188 66 Z" />
+        </clipPath>
+      </defs>
+
+      <g className={styles.animStretchTail} style={{ transformOrigin: "184px 64px" }}>
         <path
-          d="M 195 75 C 215 50 225 20 205 10 C 190 2 180 20 188 45 C 192 58 185 70 178 78"
+          d="M 184 66 C 204 52 216 26 202 14 C 192 6 180 14 184 26 C 187 34 194 28 194 22 C 199 26 196 48 178 62"
           className={styles.catBody}
         />
       </g>
+
       <path
-        d="M 165 125 C 175 115 190 95 185 75 C 175 55 145 68 125 85 C 95 105 60 115 35 118 L 18 128 C 45 132 80 128 105 115 C 125 105 145 120 165 125 Z"
+        d="M 180 96 L 190 124 C 191 129 184 132 178 131 C 174 130 175 124 179 122 L 172 96 Z"
+        className={styles.catBodyMuted}
+      />
+
+      <path
+        d="M 188 66 C 172 54 146 66 122 86 C 102 102 84 106 70 108 L 70 124 C 94 124 118 118 142 104 C 154 96 164 102 168 114 L 188 114 C 194 98 196 74 188 66 Z"
         className={styles.catBody}
       />
-      <path d="M 190 122 C 195 105 195 85 180 75" className={styles.catLine} />
+
+      <g clipPath={`url(#${bodyClipId})`}>
+        <path d="M 142 62 C 164 56 184 62 188 82 C 170 86 152 78 142 62 Z" className={styles.catPatchGold} />
+        <path d="M 102 92 C 118 82 132 88 130 104 C 116 108 104 102 102 92 Z" className={styles.catPatchRose} />
+      </g>
+
       <path
-        d="M 145 68 C 165 60 180 65 182 82 C 165 82 152 75 145 68 Z"
-        className={styles.catPatchGold}
+        d="M 188 66 C 172 54 146 66 122 86 C 102 102 84 106 70 108 L 70 124 C 94 124 118 118 142 104 C 154 96 164 102 168 114 L 188 114 C 194 98 196 74 188 66 Z"
+        className={styles.catStrokeOnly}
       />
 
-      <path d="M 75 115 L 20 125 C 12 126 12 135 22 135 L 70 130" className={styles.catBody} />
-      <path d="M 18 128 L 28 128" className={styles.catLine} strokeWidth="1.8" />
+      <path
+        d="M 178 96 C 180 110 178 122 174 130 C 172 134 159 134 158 129 C 157 125 162 123 166 122 L 166 98"
+        className={styles.catBody}
+      />
+
+      <path d="M 68 112 L 26 118 C 18 119 18 127 26 127 L 68 123" className={styles.catBodyMuted} />
+      <path d="M 74 118 L 22 124 C 14 125 14 134 24 134 L 76 130" className={styles.catBody} />
+      <path d="M 20 129 L 26 129" className={styles.catLine} />
 
       <g>
-        <path d="M 65 92 L 68 70 Q 78 76 80 90 Z" className={styles.catBody} />
-        <path d="M 68 88 L 70 75 Q 76 80 77 88 Z" className={styles.catEarInner} />
-        <path d="M 82 88 L 96 72 Q 98 86 90 98 Z" className={styles.catBody} />
-        <path d="M 85 88 L 93 78 Q 94 86 89 93 Z" className={styles.catEarInner} />
+        <path d="M 54 90 L 48 64 Q 62 68 68 82 Z" className={styles.catBody} />
+        <path d="M 56 85 L 52 71 Q 60 74 64 82 Z" className={styles.catEarInner} />
+        <path d="M 90 90 L 96 64 Q 82 68 76 82 Z" className={styles.catBody} />
+        <path d="M 88 85 L 92 71 Q 84 74 80 82 Z" className={styles.catEarInner} />
 
-        <circle cx="72" cy="104" r="20" className={styles.catBody} />
-        <path d="M 62 90 Q 72 98 82 90 Q 72 86 62 90 Z" className={styles.catPatchGold} />
+        <ellipse cx="72" cy="98" rx="22" ry="19" className={styles.catBody} />
+        <ellipse cx="57" cy="103" rx="3.8" ry="2.2" className={styles.catBlush} />
+        <ellipse cx="87" cy="103" rx="3.8" ry="2.2" className={styles.catBlush} />
 
-        <path d="M 60 102 Q 65 97 70 102" className={styles.catLine} strokeWidth="2" />
-        <path d="M 76 102 Q 81 97 86 102" className={styles.catLine} strokeWidth="2" />
-        <polygon points="71,108 75,108 73,111" className={styles.catNose} />
-        <path d="M 73 111 Q 70 114 67 113 M 73 111 Q 76 114 79 113" className={styles.catLine} strokeWidth="1.6" />
-        <path d="M 58 108 L 38 106 M 58 112 L 40 115" className={styles.catWhisker} />
-        <path d="M 85 108 L 102 106 M 84 112 L 100 115" className={styles.catWhisker} />
+        <path d="M 59 97 Q 64 93 69 97" className={styles.catLine} />
+        <path d="M 75 97 Q 80 93 85 97" className={styles.catLine} />
+        <polygon points="70,102 74,102 72,105" className={styles.catNose} />
+        <path d="M 72 105 Q 69 108 66 107 M 72 105 Q 75 108 78 107" className={styles.catLine} />
+        <path d="M 52 101 L 34 99 M 52 105 L 36 107" className={styles.catWhisker} />
+        <path d="M 92 101 L 110 99 M 92 105 L 108 107" className={styles.catWhisker} />
       </g>
     </svg>
   );

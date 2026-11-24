@@ -3,7 +3,7 @@
   width: 100%;
   height: 100%;
   overflow: visible;
-  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .catVector:hover {
@@ -13,7 +13,7 @@
 .catBody {
   fill: var(--rp-surface, #fffaf3);
   stroke: var(--rp-text, #575279);
-  stroke-width: 3.5;
+  stroke-width: 3.2;
   stroke-linecap: round;
   stroke-linejoin: round;
   transition: fill 0.25s ease, stroke 0.25s ease;
@@ -24,10 +24,39 @@
   stroke: var(--rp-text, #e0def4);
 }
 
+.catBodyMuted {
+  fill: var(--rp-overlay, #f2e9e1);
+  stroke: var(--rp-text, #575279);
+  stroke-width: 3.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: fill 0.25s ease, stroke 0.25s ease;
+}
+
+[data-theme="dark"] .catBodyMuted {
+  fill: var(--rp-overlay, #26233a);
+  stroke: var(--rp-text, #e0def4);
+}
+
+.catStrokeOnly {
+  fill: none;
+  stroke: var(--rp-text, #575279);
+  stroke-width: 3.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  pointer-events: none;
+  transition: stroke 0.25s ease;
+}
+
+[data-theme="dark"] .catStrokeOnly {
+  stroke: var(--rp-text, #e0def4);
+}
+
 .catLine {
   stroke: var(--rp-text, #575279);
-  stroke-width: 2.5;
+  stroke-width: 2.2;
   stroke-linecap: round;
+  stroke-linejoin: round;
   fill: none;
   transition: stroke 0.25s ease;
 }
@@ -38,8 +67,9 @@
 
 .catWhisker {
   stroke: var(--rp-subtle, #797593);
-  stroke-width: 1.8;
+  stroke-width: 1.6;
   stroke-linecap: round;
+  fill: none;
   transition: stroke 0.25s ease;
 }
 
@@ -55,6 +85,17 @@
 
 [data-theme="dark"] .catEarInner {
   fill: var(--rp-rose, #ebbcba);
+}
+
+.catBlush {
+  fill: var(--rp-rose, #d7827e);
+  opacity: 0.35;
+  transition: fill 0.25s ease;
+}
+
+[data-theme="dark"] .catBlush {
+  fill: var(--rp-rose, #ebbcba);
+  opacity: 0.28;
 }
 
 .catPatchRose {
@@ -77,7 +118,7 @@
 
 .catPatchPine {
   fill: var(--rp-pine, #286983);
-  opacity: 0.85;
+  opacity: 0.82;
 }
 
 [data-theme="dark"] .catPatchPine {
@@ -86,7 +127,7 @@
 
 .catPatchIris {
   fill: var(--rp-iris, #907aa9);
-  opacity: 0.85;
+  opacity: 0.82;
 }
 
 [data-theme="dark"] .catPatchIris {
@@ -109,6 +150,14 @@
   fill: var(--rp-foam, #9ccfd8);
 }
 
+.catPupil {
+  fill: var(--rp-text, #575279);
+}
+
+[data-theme="dark"] .catPupil {
+  fill: var(--rp-base, #191724);
+}
+
 .catEyeLove {
   fill: var(--rp-love, #b4637a);
 }
@@ -117,8 +166,63 @@
   fill: var(--rp-love, #eb6f92);
 }
 
-.catOutline .catBody {
+.catLaptopBase {
+  fill: var(--rp-highlight-med, #dfdad9);
+  stroke: var(--rp-text, #575279);
+  stroke-width: 2.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+[data-theme="dark"] .catLaptopBase {
+  fill: var(--rp-highlight-med, #403d52);
+  stroke: var(--rp-text, #e0def4);
+}
+
+.catLaptopLid {
+  fill: var(--rp-pine, #286983);
+  stroke: var(--rp-text, #575279);
+  stroke-width: 2.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+[data-theme="dark"] .catLaptopLid {
+  fill: var(--rp-overlay, #26233a);
+  stroke: var(--rp-text, #e0def4);
+}
+
+.catTerminalGlyph {
+  stroke: var(--rp-surface, #fffaf3);
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
   fill: none;
+}
+
+[data-theme="dark"] .catTerminalGlyph {
+  stroke: var(--rp-foam, #9ccfd8);
+}
+
+.catYarnBall {
+  fill: var(--rp-love, #b4637a);
+  stroke: var(--rp-text, #575279);
+  stroke-width: 2.8;
+}
+
+[data-theme="dark"] .catYarnBall {
+  fill: var(--rp-love, #eb6f92);
+  stroke: var(--rp-text, #e0def4);
+}
+
+.catOutline .catBody,
+.catOutline .catBodyMuted {
+  fill: var(--rp-base, #faf4ed);
+}
+
+[data-theme="dark"] .catOutline .catBody,
+[data-theme="dark"] .catOutline .catBodyMuted {
+  fill: var(--rp-base, #191724);
 }
 
 .catOutline .catPatchRose,
@@ -127,22 +231,46 @@
 .catOutline .catPatchIris {
   fill: none;
   stroke: var(--rp-subtle, #797593);
-  stroke-width: 1.8;
+  stroke-width: 1.6;
   stroke-dasharray: 4 3;
 }
 
 .catOutline .catEarInner {
   fill: none;
   stroke: var(--rp-rose, #d7827e);
-  stroke-width: 1.8;
+  stroke-width: 1.6;
+}
+
+.catOutline .catBlush {
+  opacity: 0;
+}
+
+.catOutline .catLaptopLid,
+.catOutline .catLaptopBase,
+.catOutline .catYarnBall {
+  fill: var(--rp-base, #faf4ed);
+}
+
+[data-theme="dark"] .catOutline .catLaptopLid,
+[data-theme="dark"] .catOutline .catLaptopBase,
+[data-theme="dark"] .catOutline .catYarnBall {
+  fill: var(--rp-base, #191724);
+}
+
+.catOutline .catTerminalGlyph {
+  stroke: var(--rp-text, #575279);
+}
+
+[data-theme="dark"] .catOutline .catTerminalGlyph {
+  stroke: var(--rp-text, #e0def4);
 }
 
 @keyframes sleepBreathe {
   0%, 100% {
-    transform: scale(1);
+    transform: scale(1, 1);
   }
   50% {
-    transform: scale(1.025, 0.98);
+    transform: scale(1.022, 0.978);
   }
 }
 
@@ -151,21 +279,21 @@
     transform: rotate(0deg);
   }
   50% {
-    transform: rotate(4deg);
+    transform: rotate(7deg);
   }
 }
 
 @keyframes zzzFloat {
   0% {
     opacity: 0;
-    transform: translate(0, 0) scale(0.8);
+    transform: translate(0, 4px) scale(0.82);
   }
-  50% {
+  45% {
     opacity: 0.9;
   }
   100% {
     opacity: 0;
-    transform: translate(12px, -22px) scale(1.1);
+    transform: translate(11px, -18px) scale(1.08);
   }
 }
 
@@ -180,10 +308,10 @@
 
 @keyframes loafTail {
   0%, 100% {
-    transform: scale(1);
+    transform: rotate(0deg);
   }
   50% {
-    transform: rotate(2deg) scale(1.02);
+    transform: rotate(4deg);
   }
 }
 
@@ -191,11 +319,11 @@
   0%, 100% {
     transform: rotate(0deg);
   }
-  40% {
-    transform: rotate(-15deg);
+  35% {
+    transform: rotate(-14deg);
   }
-  60% {
-    transform: rotate(8deg);
+  65% {
+    transform: rotate(7deg);
   }
 }
 
@@ -204,7 +332,7 @@
     transform: translate(0, 0) rotate(0deg);
   }
   50% {
-    transform: translate(6px, -10px) rotate(10deg);
+    transform: translate(5px, -9px) rotate(9deg);
   }
 }
 
@@ -213,7 +341,25 @@
     transform: rotate(0deg);
   }
   50% {
-    transform: rotate(10deg);
+    transform: rotate(9deg);
+  }
+}
+
+@keyframes walkStepA {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-7deg);
+  }
+}
+
+@keyframes walkStepB {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(7deg);
   }
 }
 
@@ -222,7 +368,16 @@
     transform: rotate(0deg);
   }
   50% {
-    transform: rotate(5deg);
+    transform: rotate(9deg);
+  }
+}
+
+@keyframes pawWiggleAlt {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-8deg);
   }
 }
 
@@ -231,16 +386,16 @@
     transform: rotate(0deg);
   }
   50% {
-    transform: rotate(-6deg);
+    transform: rotate(-8deg);
   }
 }
 
 @keyframes earTwitchL {
-  0%, 90%, 100% {
+  0%, 88%, 100% {
     transform: rotate(0deg);
   }
-  93% {
-    transform: rotate(-7deg);
+  92% {
+    transform: rotate(-8deg);
   }
   96% {
     transform: rotate(3deg);
@@ -248,11 +403,11 @@
 }
 
 @keyframes earTwitchR {
-  0%, 88%, 100% {
+  0%, 86%, 100% {
     transform: rotate(0deg);
   }
-  91% {
-    transform: rotate(7deg);
+  90% {
+    transform: rotate(8deg);
   }
   95% {
     transform: rotate(-3deg);
@@ -260,7 +415,7 @@
 }
 
 @keyframes catBlink {
-  0%, 93%, 97%, 100% {
+  0%, 92%, 98%, 100% {
     transform: scaleY(1);
   }
   95% {
@@ -268,68 +423,177 @@
   }
 }
 
+@keyframes typePawL {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-4px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes typePawR {
+  0%, 50%, 100% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes yarnRoll {
+  0%, 100% {
+    transform: translateX(0) rotate(0deg);
+  }
+  45% {
+    transform: translateX(6px) rotate(18deg);
+  }
+  70% {
+    transform: translateX(2px) rotate(6deg);
+  }
+}
+
+@keyframes tapYarnPaw {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  40% {
+    transform: rotate(10deg) translateX(3px);
+  }
+}
+
 .animSleepBreathe {
-  animation: sleepBreathe 4s ease-in-out infinite;
-  transform-origin: 100px 95px;
+  animation: sleepBreathe 4.2s ease-in-out infinite;
 }
 
 .animTailSwish {
-  animation: tailSwish 4s ease-in-out infinite;
-  transform-origin: 160px 105px;
+  animation: tailSwish 3.8s ease-in-out infinite;
 }
 
 .animZzz {
   fill: var(--rp-iris, #907aa9);
   font-family: var(--ifm-font-family-monospace);
-  font-weight: bold;
-  animation: zzzFloat 3s ease-in-out infinite;
+  font-weight: 700;
+  animation: zzzFloat 3.2s ease-in-out infinite;
 }
 
 .animStretchTail {
-  animation: stretchTail 3.5s ease-in-out infinite;
-  transform-origin: 205px 65px;
+  animation: stretchTail 3.4s ease-in-out infinite;
 }
 
 .animLoafTail {
-  animation: loafTail 3s ease-in-out infinite;
-  transform-origin: 155px 115px;
+  animation: loafTail 3.2s ease-in-out infinite;
 }
 
 .animEarTwitchL {
-  animation: earTwitchL 4.5s ease-in-out infinite;
-  transform-origin: 36px 45px;
+  animation: earTwitchL 4.6s ease-in-out infinite;
 }
 
 .animEarTwitchR {
-  animation: earTwitchR 5s ease-in-out infinite 0.7s;
+  animation: earTwitchR 5.2s ease-in-out infinite 0.7s;
 }
 
 .animBlink {
-  animation: catBlink 4s ease-in-out infinite;
+  animation: catBlink 4.2s ease-in-out infinite;
+  transform-box: fill-box;
   transform-origin: center;
 }
 
 .animBatPaw {
-  animation: batPaw 2.5s ease-in-out infinite;
-  transform-origin: 95px 105px;
+  animation: batPaw 2.4s ease-in-out infinite;
 }
 
 .animFlutter {
-  animation: flutter 3s ease-in-out infinite;
-  transform-origin: 120px 30px;
+  animation: flutter 2.8s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
 }
 
 .animWalkTail {
-  animation: walkTail 3.5s ease-in-out infinite;
-  transform-origin: 38px 90px;
+  animation: walkTail 3.2s ease-in-out infinite;
+}
+
+.animWalkStepA {
+  animation: walkStepA 1.6s ease-in-out infinite;
+}
+
+.animWalkStepB {
+  animation: walkStepB 1.6s ease-in-out infinite;
 }
 
 .animPawWiggle {
-  animation: pawWiggle 2.5s ease-in-out infinite;
-  transform-origin: 105px 75px;
+  animation: pawWiggle 2.4s ease-in-out infinite;
+}
+
+.animPawWiggleAlt {
+  animation: pawWiggleAlt 2.4s ease-in-out infinite 0.35s;
 }
 
 .animDrapeTail {
-  animation: drapeTail 4s ease-in-out infinite;
-  transform-origin: 125px 180px;
+  animation: drapeTail 3.8s ease-in-out infinite;
+}
+
+.animTypePawL {
+  animation: typePawL 0.85s ease-in-out infinite;
+}
+
+.animTypePawR {
+  animation: typePawR 0.85s ease-in-out infinite;
+}
+
+.animYarnRoll {
+  animation: yarnRoll 2.2s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.animTapYarnPaw {
+  animation: tapYarnPaw 2.2s ease-in-out infinite;
+}
+
+@keyframes cornerPeek {
+  0%, 72%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  84% {
+    transform: translate3d(5px, -5px, 0);
+  }
+  92% {
+    transform: translate3d(3px, -3px, 0);
+  }
+}
+
+.animCornerPeek {
+  animation: cornerPeek 6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .catVector,
+  .animSleepBreathe,
+  .animTailSwish,
+  .animZzz,
+  .animStretchTail,
+  .animLoafTail,
+  .animEarTwitchL,
+  .animEarTwitchR,
+  .animBlink,
+  .animBatPaw,
+  .animFlutter,
+  .animWalkTail,
+  .animWalkStepA,
+  .animWalkStepB,
+  .animPawWiggle,
+  .animPawWiggleAlt,
+  .animDrapeTail,
+  .animTypePawL,
+  .animTypePawR,
+  .animYarnRoll,
+  .animTapYarnPaw,
+  .animCornerPeek {
+    animation: none !important;
+    transition: none !important;
+  }
 }

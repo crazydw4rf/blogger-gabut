@@ -1,130 +1,316 @@
 .heroBanner {
-  padding: 4.5rem 0 3.5rem;
+  margin-top: 25px;
+  padding: 6.25rem 0 4.5rem;
   text-align: center;
   position: relative;
   overflow: hidden;
+  background: radial-gradient(circle at 18% 20%, rgba(86, 148, 159, 0.32), transparent 46%),
+    radial-gradient(circle at 82% 24%, rgba(215, 130, 126, 0.25), transparent 45%),
+    var(--ifm-hero-background-color);
 }
 
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 3rem 1.5rem 2rem;
-  }
+[data-theme="dark"] .heroBanner {
+  background: radial-gradient(circle at 18% 20%, rgba(156, 207, 216, 0.1), transparent 48%),
+    radial-gradient(circle at 82% 24%, rgba(235, 188, 186, 0.11), transparent 46%),
+    var(--ifm-hero-background-color);
+}
+
+.heroInner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heroTitle {
+  font-size: clamp(2.35rem, 4.5vw, 3.5rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.75rem;
+}
+
+.heroSubtitle {
+  max-width: 600px;
+  font-size: clamp(1.02rem, 1.8vw, 1.22rem);
+  margin-bottom: 0;
 }
 
 .catsMain {
   position: relative;
   width: 100%;
-  padding: 4rem 1.5rem 6rem;
+  padding: 5rem 1.5rem 5.5rem;
   overflow-x: clip;
   display: flex;
   flex-direction: column;
+  background-image: radial-gradient(var(--rp-highlight-med, #dfdad9) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+[data-theme="dark"] .catsMain {
+  background-image: radial-gradient(rgba(144, 140, 170, 0.14) 1px, transparent 1px);
 }
 
 .catWaypoint {
   display: flex;
+  flex-direction: column;
   width: 100%;
-  max-width: 1100px;
-  margin: 0 auto clamp(140px, 16vh, 250px);
+  max-width: 1060px;
+  margin: 0 auto clamp(95px, 12vh, 170px);
   position: relative;
 }
 
 .catWaypoint:last-child {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .alignLeft {
-  justify-content: flex-start;
-  padding-left: clamp(1rem, 6vw, 8rem);
+  align-items: flex-start;
+  padding-left: clamp(1rem, 8vw, 8rem);
 }
 
 .alignRight {
-  justify-content: flex-end;
-  padding-right: clamp(1rem, 6vw, 8rem);
+  align-items: flex-end;
+  padding-right: clamp(1rem, 8vw, 8rem);
 }
 
 .alignCenter {
-  justify-content: center;
+  align-items: center;
 }
 
 .alignCenterLeft {
-  justify-content: center;
-  padding-right: clamp(1rem, 14vw, 15rem);
+  align-items: flex-start;
+  padding-left: clamp(1.5rem, 16vw, 15rem);
 }
 
 .alignCenterRight {
-  justify-content: center;
-  padding-left: clamp(1rem, 14vw, 15rem);
+  align-items: flex-end;
+  padding-right: clamp(1.5rem, 16vw, 15rem);
 }
 
-.catWrapper {
-  position: relative;
+.catStage {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   opacity: 0;
-  transform: translateY(40px) scale(0.92);
   transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 }
 
-.waypointVisible .catWrapper {
+.enterLeft {
+  transform: translate3d(-44px, 24px, 0) scale(0.94);
+}
+
+.enterRight {
+  transform: translate3d(44px, 24px, 0) scale(0.94);
+}
+
+.enterUp {
+  transform: translate3d(0, 44px, 0) scale(0.94);
+}
+
+.waypointVisible .catStage {
   opacity: 1;
-  transform: translateY(0) scale(1);
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+.catInteractiveBtn {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  padding: 0.65rem;
+  cursor: pointer;
+  border-radius: 20px;
+  outline: none;
+}
+
+.catInteractiveBtn:focus-visible {
+  box-shadow: 0 0 0 3px var(--rp-foam, #56949f);
+}
+
+.catSpotlight {
+  position: absolute;
+  width: 78%;
+  height: 78%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(215, 130, 126, 0.16) 0%, transparent 72%);
+  pointer-events: none;
+  z-index: 0;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+[data-theme="dark"] .catSpotlight {
+  background: radial-gradient(circle, rgba(235, 188, 186, 0.12) 0%, transparent 72%);
+}
+
+.catInteractiveBtn:hover .catSpotlight {
+  transform: scale(1.12);
 }
 
 .catItem {
-  width: clamp(160px, 26vw, 250px);
+  position: relative;
+  z-index: 1;
+  width: clamp(185px, 28vw, 275px);
   height: auto;
-  max-width: 85vw;
+  max-width: 82vw;
 }
 
-.pawTrail {
+.groundShadow {
+  display: block;
+  width: 68%;
+  height: 12px;
+  margin-top: -6px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(87, 82, 121, 0.16) 0%, transparent 72%);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+[data-theme="dark"] .groundShadow {
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.45) 0%, transparent 72%);
+}
+
+.catInteractiveBtn:hover .groundShadow {
+  transform: scaleX(0.92);
+  opacity: 0.7;
+}
+
+.catPetBounce {
+  animation: petSpring 0.55s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes petSpring {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.08, 0.93);
+  }
+  65% {
+    transform: scale(0.97, 1.04) translateY(-6px);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.purrBubble {
   position: absolute;
-  top: 50%;
+  top: -12px;
   left: 50%;
-  display: flex;
-  gap: 16px;
+  transform: translateX(-50%);
+  z-index: 5;
+  white-space: nowrap;
+  padding: 0.32rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  font-family: var(--ifm-font-family-monospace);
+  color: #fffaf3;
+  background: var(--rp-love, #b4637a);
+  box-shadow: 0 8px 18px rgba(180, 99, 122, 0.3);
   pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.8s ease 0.25s;
+  animation: purrFloat 1.5s ease-out forwards;
+}
+
+[data-theme="dark"] .purrBubble {
+  color: #191724;
+  background: var(--rp-rose, #ebbcba);
+}
+
+@keyframes purrFloat {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 8px) scale(0.85);
+  }
+  20% {
+    opacity: 1;
+    transform: translate(-50%, -6px) scale(1);
+  }
+  80% {
+    opacity: 1;
+    transform: translate(-50%, -18px) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -28px) scale(0.95);
+  }
+}
+
+.pawConnector {
+  position: relative;
+  height: 112px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  pointer-events: none;
+  margin-top: 1.25rem;
   color: var(--rp-subtle, #797593);
 }
 
-.waypointVisible .pawTrail {
-  opacity: 0.35;
+.toRight {
+  justify-content: center;
 }
 
-[data-theme="dark"] .pawTrail {
-  color: var(--rp-subtle, #908caa);
+.toLeft {
+  justify-content: center;
 }
 
-@media (max-width: 640px) {
+.toCenter {
+  justify-content: center;
+}
+
+.pawStep {
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  transition: opacity 0.65s ease;
+}
+
+.waypointVisible .pawStep {
+  opacity: 0.55;
+}
+
+@media (max-width: 820px) {
+  .heroBanner {
+    padding: 4.75rem 1.25rem 3.5rem;
+  }
+
   .catWaypoint {
-    margin-bottom: 110px;
+    margin-bottom: 84px;
   }
 
   .alignLeft,
   .alignRight,
   .alignCenterLeft,
   .alignCenterRight {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+    align-items: center;
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .catItem {
-    width: clamp(140px, 46vw, 210px);
+    width: clamp(170px, 54vw, 240px);
   }
 
-  .pawTrail {
-    display: none;
+  .pawConnector {
+    height: 82px;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .catWrapper {
+  .catStage,
+  .pawStep,
+  .catPetBounce,
+  .purrBubble {
     opacity: 1;
     transform: none;
     transition: none;
+    animation: none;
   }
 }

@@ -6,5 +6,7 @@ export { default as CatPlaying } from "./CatPlaying";
 export { default as CatWalking } from "./CatWalking";
 export { default as CatRolling } from "./CatRolling";
 export { default as CatSitting } from "./CatSitting";
+export { default as CatLaptop } from "./CatLaptop";
+export { default as CatYarn } from "./CatYarn";
 export { default as PawPrint } from "./PawPrint";
 export * from "./types";
